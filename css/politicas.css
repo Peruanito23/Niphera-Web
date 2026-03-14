@@ -1,0 +1,110 @@
+/* RESET Y ESTILOS BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none !important; /* QUITA EL SUBRAYADO */
+    color: #333;
+    font-weight: 500;
+}
+
+/* SECCION POLITICAS */
+.politicas {
+    margin: 40px 80px;
+    padding: 60px;
+    border-radius: 10px;
+    color: white;
+    /* Mantenemos tu gradiente original pero con un toque más profundo */
+    background: linear-gradient(180deg, #4a6391, #0c1b2e);
+    line-height: 1.7;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.politicas h1 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #38bdf8; /* Color de realce Niphera */
+}
+
+.politicas h2 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+}
+
+.politicas h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #38bdf8;
+}
+
+.politicas p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.politicas ul {
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.politicas li {
+    margin-bottom: 8px;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 40px;
+    padding: 40px 80px;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(90deg, #1e2c48, #4b65a6);
+    color: white;
+}
+
+footer h3 {
+    margin-bottom: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .navbar, .politicas, footer {
+        padding: 20px;
+        margin: 20px;
+    }
+    
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

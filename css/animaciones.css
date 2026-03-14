@@ -1,0 +1,104 @@
+/* --- EFECTOS VISUALES GLOBALES NIPHERA --- */
+
+/* 1. Suavizado de carga (Fade In inicial) */
+.hero, .about, .history, .mission, .values, .team, .portafolio, .contacto {
+    animation: fadeInPage 0.8s ease-out forwards;
+}
+
+@keyframes fadeInPage {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 2. Animación del Título Principal (H1) */
+h1 {
+    animation: slideIn 1s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-50px); opacity: 0; filter: blur(5px); }
+    to { transform: translateX(0); opacity: 1; filter: blur(0); }
+}
+
+/* 3. Micro-interacciones del Menú (Línea animada solo en Nav) */
+nav ul li a {
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #38bdf8;
+    transition: width 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+nav ul li a:hover {
+    color: #38bdf8 !important;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* 4. BOTONES ESTILO NEÓN (Sin subrayado) */
+.btn-neon, .btn1, .btn2 {
+    display: inline-block;
+    padding: 12px 28px !important;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none !important; /* QUITA SUBRAYADO */
+    background: transparent !important;
+    color: #38bdf8 !important;
+    border: 2px solid #38bdf8 !important;
+    transition: all 0.4s ease-in-out !important;
+    position: relative;
+    overflow: hidden;
+    /* Neón suave inicial */
+    box-shadow: inset 0 0 5px rgba(56, 189, 248, 0.2), 0 0 10px rgba(56, 189, 248, 0.1);
+    text-shadow: 0 0 5px rgba(56, 189, 248, 0.3);
+}
+
+.btn-neon:hover, .btn1:hover, .btn2:hover {
+    background: #38bdf8 !important;
+    color: white !important;
+    transform: translateY(-3px) scale(1.05);
+    /* Resplandor Neón Intenso */
+    box-shadow: 0 0 20px #38bdf8, 0 0 40px rgba(56, 189, 248, 0.6);
+    text-decoration: none !important;
+    text-shadow: none;
+}
+
+/* 5. Tarjetas Flotantes (Equipo, Valores, Misión, Portafolio) */
+.member, .mission-box, .value, .card, .servicio, .razon {
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.member:hover, .mission-box:hover, .value:hover, .card:hover, .servicio:hover {
+    transform: translateY(-15px) rotateX(2deg) rotateY(2deg) !important;
+    box-shadow: 0 20px 40px rgba(56, 189, 248, 0.2) !important;
+    filter: brightness(1.05);
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* 6. Zoom en Imágenes dentro de tarjetas */
+.card img, .servicio .img, .photo {
+    transition: transform 0.6s ease;
+}
+
+.card:hover img, .member:hover .photo {
+    transform: scale(1.1);
+}
+
+/* 7. Optimización para Móviles */
+@media (max-width: 768px) {
+    .member:hover, .card:hover, .mission-box:hover {
+        transform: none !important;
+    }
+}
