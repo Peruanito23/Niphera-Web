@@ -1,161 +1,454 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Niphera</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niphera | Inicio</title>
 
-<link rel="stylesheet" href="css/inicio.css">
-<link rel="stylesheet" href="css/animaciones.css">
+    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="css/animaciones.css">
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Bree+Serif&family=Roboto+Slab:wght@100..900&family=Abril+Fatface&family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Ajuste para que la imagen del logo tenga el tamaño adecuado */
+        .logo-img {
+            height: 80px;
+            width: 150px;
+            vertical-align: middle;
+            margin-right: 0px;
+            object-fit: cover;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            font-weight: 700;
+            gap: 0px;
+        }
+        
+        /* Hacer el menú de navegación más grande */
+        nav ul li a {
+            font-size: 20px !important;
+            padding: 10px 5px;
+        }
+        
+        /* Ajustar el navbar para que se vea bien con elementos más grandes */
+        .navbar {
+            padding: 15px 80px;
+        }
+        
+        /* Espaciado entre items del menú */
+        nav ul {
+            gap: 40px;
+        }
 
+        /* Ajustes para la nueva imagen laptod */
+        .hero-img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-img img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+    </style>
 </head>
 <body>
 
-<header class="navbar">
-<div class="logo">
-<span>∞</span> NIPHERA
+    <header class="navbar">
+        <div class="logo">
+            <img src="Imagenes/ImagenNiphera.jpeg" alt="NIPHERA" class="logo-img">
+            NIPHERA
+        </div>
+        <nav>
+            <ul>
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="portafolio.html">Portafolio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="politicas.html">Politicas</a></li>
+            </ul>
+        </nav>
+    </header>
 
-</div>
+    <!-- HERO CON NUEVA IMAGEN LAPTOD -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Si lo puedes imaginar, <br> lo puedes programar.</h1>
+            <h2 class="hero-subtitle">La tecnología es el lienzo, el código es el pincel.</h2>
+            <p>Somos una empresa desarrolladora de software comprometida con transformar ideas en soluciones digitales eficientes, optimizando procesos y fortaleciendo la competitividad de nuestros clientes en el entorno tecnológico actual.</p>
+            <div class="hero-buttons">
+                <a href="servicios.html" class="btn-neon">Servicios</a>
+                <a href="contacto.html" class="btn-neon">Contáctanos</a>
+            </div>
+        </div>
+        <div class="hero-img">
+            <img src="Imagenes/laptod.png" alt="Laptop - Desarrollo de software" width="420">
+        </div>
+    </section>
 
+    <!-- SOBRE NOSOTROS (con historia real) -->
+    <section class="about">
+        <div class="container">
+            <span class="section-tag"><h1>SOBRE NOSOTROS</h1></span>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="about-description">
+                        Desde el inicio trabajamos de manera colaborativa para construir una propuesta que reflejara nuestra visión sobre el papel de la innovación digital en el desarrollo de las organizaciones. Nuestro objetivo es contribuir al fortalecimiento de la identidad digital de las empresas y apoyar su adaptación al entorno tecnológico actual. Más que un proyecto académico, NIPHERA representa nuestra visión de futuro: una iniciativa basada en el conocimiento, la colaboración y el deseo de impulsar el desarrollo tecnológico de nuestra comunidad.
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <h3>2026</h3>
+                        <p>Año de fundación</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>27</h3>
+                        <p>Fundadores</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<nav>
-<ul>
-<li><a href="inicio.html">Inicio</a></li>
-<li><a href="servicios.html">Servicios</a></li>
-<li><a href="portafolio.html">Portafolio</a></li>
-<li><a href="contacto.html">Contacto</a></li>
-<li><a href="politicas.html">Politicas</a></li>
-</ul>
-</nav>
-</header>
+    <!-- NUESTRA HISTORIA (versión resumida) -->
+    <section class="history">
+        <div class="container">
+            <span class="section-tag light"><h1>NUESTRA HISTORIA</h1></span>
+            <div class="history-grid">
+                <div class="history-image">
+                    <div class="image-placeholder"></div>
+                </div>
+                <div class="history-text">
+                    <p>NIPHERA nace en el año 2026 como parte de un proyecto de emprendimiento del Politécnico Vicente Aquilino Santos, dentro del área de Desarrollo y Administración de Aplicaciones Informáticas. Surge como una iniciativa colectiva de los 27 estudiantes del grado, con el propósito de aplicar los conocimientos adquiridos durante nuestra formación técnica.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="hero">
-<div class="hero-text">
-<h1>
-Transformamos <br>
-ideas en soluciones <br>
-digitales eficientes
-</h1>
-<p>
-Optimiza tus procesos con una plataforma intuitiva diseñada
-para escalar tu negocio.
-</p>
-<div class="hero-buttons">
-<a href="servicios.html" class="btn-neon">Servicios</a>
-<a href="contacto.html" class="btn-neon">Contáctanos</a>
-</div>
-</div>
-<div class="hero-img">
-<img src="https://i.imgur.com/4V4R3yB.png">
-</div>
-</section>
+    <!-- MISIÓN Y VISIÓN (con textos reales) -->
+    <section class="mission-vision">
+        <div class="container">
+            <h2 class="section-title">Nuestra <span>Misión & Visión</span></h2>
+            <div class="mv-grid">
+                <div class="mv-card">
+                    <h3>MISIÓN</h3>
+                    <p>Desarrollar soluciones digitales innovadoras y eficientes que impulsen la transformación tecnológica de sus clientes, optimizando sus procesos y fortaleciendo su competitividad en el mercado mediante herramientas digitales.</p>
+                </div>
+                <div class="mv-card">
+                    <h3>VISIÓN</h3>
+                    <p>Ser una organización enfocada en el ámbito tecnológico que busca un crecimiento sostenible basado en la innovación constante, guiando sus decisiones y manteniendo coherencia con su misión y objetivos, para consolidarnos como referentes en el desarrollo de soluciones digitales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="about">
-<h2>Sobre Nosotros</h2>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-</p>
-</section>
+    <!-- VALORES (con los 6 valores reales) -->
+    <section class="values">
+        <div class="container">
+            <h2>Nuestros Valores</h2>
+            <div class="values-grid">
+                <div class="value">Innovación</div>
+                <div class="value">Excelencia</div>
+                <div class="value">Responsabilidad</div>
+                <div class="value">Colaboración</div>
+                <div class="value">Transparencia</div>
+                <div class="value">Desarrollo humano</div>
+            </div>
+        </div>
+    </section>
 
-<section class="history">
-<div class="history-img"></div>
-<div class="history-text">
-<h2>Nuestra Historia</h2>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-</p>
-</div>
-</section>
+    <!-- EQUIPO - CARRUSEL CON TODOS LOS MIEMBROS -->
+    <section class="team-carrusel">
+        <div class="container">
+            <h2>Nuestro Equipo</h2>
+            <p class="team-subtitle">Conoce a los 27 profesionales que hacen posible Niphera</p>
+            
+            <div class="carrusel-container">
+                <!-- Flecha Izquierda -->
+                <button class="carrusel-flecha flecha-izquierda" id="flechaIzq">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <!-- Tarjeta del miembro actual -->
+                <div class="miembro-card" id="miembroCard">
+                    <div class="miembro-avatar" id="miembroAvatar">
+                        <span id="miembroIniciales"></span>
+                    </div>
+                    <h3 id="miembroNombre"></h3>
+                    <p id="miembroCargo"></p>
+                    <p id="miembroArea" class="miembro-area"></p>
+                    <div class="miembro-dots" id="miembroDots"></div>
+                </div>
+                
+                <!-- Flecha Derecha -->
+                <button class="carrusel-flecha flecha-derecha" id="flechaDer">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="team-stats">
+                <span><i class="fas fa-users"></i> 27 profesionales</span>
+            </div>
+        </div>
+    </section>
 
-<section class="mission">
-<h2>Nuestra Misión & Visión</h2>
-<div class="mission-grid">
-<div class="mission-box">
-<h3>Misión</h3>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-</p>
-</div>
-<div class="mission-box">
-<h3>Visión</h3>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-</p>
-</div>
-</div>
-</section>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-left">
+            <h3>NIPHERA</h3>
+            <p>Desarrollando soluciones digitales innovadoras desde 2026</p>
+            <p>Politécnico Vicente Aquilino Santos</p>
+        </div>
+        <div class="footer-right">
+            <p>Políticas de privacidad</p>
+            <p>Términos y condiciones</p>
+            <p>© 2026 Niphera</p>
+        </div>
+    </footer>
 
-<section class="values">
-<h2>Nuestros Valores</h2>
-<div class="values-grid">
-<div class="value">Valor 1</div>
-<div class="value">Valor 2</div>
-<div class="value">Valor 3</div>
-<div class="value">Valor 4</div>
-<div class="value">Valor 5</div>
-<div class="value">Valor 6</div>
-</div>
-</section>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="js/animaciones.js"></script>
+    
+    <!-- Script del carrusel con TODOS los miembros -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // LISTA COMPLETA DE MIEMBROS DEL EQUIPO NIPHERA
+            const miembros = [
+                // Nivel Ejecutivo (C-Suite)
+                { nombre: "Camila H.", cargo: "Directora Ejecutiva", area: "CEO", iniciales: "CH" },
+                { nombre: "Yoheisy DLC.", cargo: "Directora de Operaciones", area: "COO", iniciales: "YD" },
+                { nombre: "Nervi C.", cargo: "Director de Tecnología", area: "CTO", iniciales: "NC" },
+                
+                // Nivel de Gerencia y Estrategia
+                { nombre: "Richard V.", cargo: "Project Manager", area: "Gerencia", iniciales: "RV" },
+                { nombre: "Rainier V.", cargo: "Gestión de Proyectos", area: "Gerencia", iniciales: "RV" },
+                { nombre: "Nelson M.", cargo: "Software Architect", area: "Arquitectura", iniciales: "NM" },
+                { nombre: "Elanny F.", cargo: "Business Analyst", area: "Análisis", iniciales: "EF" },
+                
+                // Nivel de Ingeniería y Desarrollo
+                { nombre: "Samuel M.", cargo: "DevOps Engineer", area: "Infraestructura", iniciales: "SM" },
+                { nombre: "Máximo G.", cargo: "Full Stack Developer", area: "Desarrollo", iniciales: "MG" },
+                { nombre: "Leonardo S.", cargo: "Cybersecurity", area: "Seguridad", iniciales: "LS" },
+                { nombre: "Oliver B.", cargo: "Sales Engineer", area: "Ingeniería", iniciales: "OB" },
+                { nombre: "Andres P.", cargo: "Mobile Developer", area: "Móvil", iniciales: "AP" },
+                { nombre: "Evert G.", cargo: "Backend Developer", area: "Backend", iniciales: "EG" },
+                { nombre: "Orlando S.", cargo: "Frontend Developer", area: "Frontend", iniciales: "OS" },
+                { nombre: "Anthony P.", cargo: "Software Developer", area: "Desarrollo", iniciales: "AP" },
+                
+                // Diseño y Producto
+                { nombre: "Melany H.", cargo: "Product Designer", area: "Diseño", iniciales: "MH" },
+                { nombre: "Lusmileydi H.", cargo: "UX Designer", area: "UX", iniciales: "LH" },
+                { nombre: "Kamely G.", cargo: "UI Designer", area: "UI", iniciales: "KG" },
+                { nombre: "Christopher S.", cargo: "UI Designer", area: "UI", iniciales: "CS" },
+                
+                // Marketing y Operaciones Administrativas
+                { nombre: "Gerelyn B.", cargo: "Marketing", area: "Marketing", iniciales: "GB" },
+                { nombre: "Genesys F.", cargo: "Marketing", area: "Marketing", iniciales: "GF" },
+                { nombre: "Marbelin S.", cargo: "Marketing", area: "Marketing", iniciales: "MS" },
+                { nombre: "Joan P.", cargo: "Recursos Humanos", area: "RRHH", iniciales: "JP" },
+                { nombre: "David T.", cargo: "Recursos Humanos", area: "RRHH", iniciales: "DT" },
+                
+                // Aseguramiento de Calidad y Soporte
+                { nombre: "Juan V.", cargo: "QA Tester", area: "Calidad", iniciales: "JV" },
+                { nombre: "Anderson U.", cargo: "Soporte Técnico", area: "Soporte", iniciales: "AU" },
+                { nombre: "Cleniver E.", cargo: "Soporte Técnico", area: "Soporte", iniciales: "CE" }
+            ];
+            
+            // Elementos del DOM
+            const miembroCard = document.getElementById('miembroCard');
+            const miembroAvatar = document.getElementById('miembroAvatar');
+            const miembroIniciales = document.getElementById('miembroIniciales');
+            const miembroNombre = document.getElementById('miembroNombre');
+            const miembroCargo = document.getElementById('miembroCargo');
+            const miembroArea = document.getElementById('miembroArea');
+            const miembroDots = document.getElementById('miembroDots');
+            const flechaIzq = document.getElementById('flechaIzq');
+            const flechaDer = document.getElementById('flechaDer');
+            
+            let indiceActual = 0;
+            let intervaloAutomatico;
+            
+            // Colores para los avatares
+            const colores = [
+                '#38bdf8', '#1e3a8a', '#0f172a', '#4f46e5', '#7c3aed', 
+                '#2563eb', '#0891b2', '#059669', '#d97706', '#dc2626',
+                '#9333ea', '#db2777', '#65a30d', '#0d9488', '#57534e'
+            ];
+            
+            // Crear dots
+            function crearDots() {
+                miembroDots.innerHTML = '';
+                miembros.forEach((_, index) => {
+                    const dot = document.createElement('span');
+                    dot.classList.add('dot');
+                    if (index === indiceActual) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        irAMiembro(index);
+                        reiniciarIntervalo();
+                    });
+                    miembroDots.appendChild(dot);
+                    
+                    // Mostrar solo primeros 15 dots para no saturar
+                    if (index >= 15) {
+                        dot.style.display = 'none';
+                    }
+                });
+            }
+            
+            // Actualizar miembro mostrado
+            function actualizarMiembro(index) {
+                const miembro = miembros[index];
+                
+                // Efecto fade
+                miembroCard.style.opacity = '0.5';
+                miembroCard.style.transform = 'scale(0.98)';
+                
+                setTimeout(() => {
+                    // Cambiar color del avatar
+                    const colorIndex = index % colores.length;
+                    miembroAvatar.style.background = colores[colorIndex];
+                    
+                    // Actualizar iniciales
+                    miembroIniciales.textContent = miembro.iniciales;
+                    
+                    // Actualizar textos
+                    miembroNombre.textContent = miembro.nombre;
+                    miembroCargo.textContent = miembro.cargo;
+                    miembroArea.textContent = miembro.area;
+                    
+                    miembroCard.style.opacity = '1';
+                    miembroCard.style.transform = 'scale(1)';
+                    
+                    // Actualizar dots
+                    document.querySelectorAll('.dot').forEach((dot, i) => {
+                        if (i === index) dot.classList.add('active');
+                        else dot.classList.remove('active');
+                        
+                        // Mostrar dots cercanos al actual
+                        if (i >= index - 5 && i <= index + 5) {
+                            dot.style.display = 'inline-block';
+                        } else {
+                            dot.style.display = 'none';
+                        }
+                    });
+                }, 200);
+                
+                indiceActual = index;
+            }
+            
+            // Ir a miembro específico
+            function irAMiembro(index) {
+                if (index < 0) index = miembros.length - 1;
+                if (index >= miembros.length) index = 0;
+                actualizarMiembro(index);
+            }
+            
+            // Siguiente miembro
+            function siguienteMiembro() {
+                irAMiembro(indiceActual + 1);
+            }
+            
+            // Anterior miembro
+            function anteriorMiembro() {
+                irAMiembro(indiceActual - 1);
+            }
+            
+            // Reiniciar intervalo automático
+            function reiniciarIntervalo() {
+                clearInterval(intervaloAutomatico);
+                intervaloAutomatico = setInterval(siguienteMiembro, 4000);
+            }
+            
+            // Event listeners para flechas
+            flechaIzq.addEventListener('click', function() {
+                anteriorMiembro();
+                reiniciarIntervalo();
+            });
+            
+            flechaDer.addEventListener('click', function() {
+                siguienteMiembro();
+                reiniciarIntervalo();
+            });
+            
+            // Inicializar
+            crearDots();
+            actualizarMiembro(0);
+            
+            // Iniciar rotación automática
+            intervaloAutomatico = setInterval(siguienteMiembro, 4000);
+            
+            // Pausar al hacer hover
+            miembroCard.addEventListener('mouseenter', () => {
+                clearInterval(intervaloAutomatico);
+            });
+            
+            miembroCard.addEventListener('mouseleave', () => {
+                intervaloAutomatico = setInterval(siguienteMiembro, 4000);
+            });
+        });
+    </script>
+    
+    <!-- EASTER EGG: 5 clicks secretos en Máximo G. -->
+    <style>
+        @keyframes temblor {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            20% { transform: translate(-5px, -5px) rotate(-2deg); }
+            40% { transform: translate(5px, 5px) rotate(2deg); }
+            60% { transform: translate(-5px, 5px) rotate(-2deg); }
+            80% { transform: translate(5px, -5px) rotate(2deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+        
+        .temblor-maximo {
+            animation: temblor 0.5s ease-in-out !important;
+        }
+    </style>
 
-<section class="team">
-<h2>Miembros del Equipo</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-<div class="team-grid">
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-<div class="member"><div class="photo"></div><h4>Nombre</h4><span>Cargo</span></div>
-</div>
-</section>
-
-<footer class="footer">
-<div class="footer-left">
-<h3>Niphera</h3>
-<p>Conoce más sobre nosotros visitando nuestras redes.</p>
-</div>
-<div class="footer-right">
-<p>Políticas de privacidad</p>
-<p>Términos y condiciones</p>
-</div>
-</footer>
-
-<script src="https://unpkg.com/scrollreveal"></script>
-<script src="js/animaciones.js"></script>
+    <script>
+        (function() {
+            let clicksMaximo = 0;
+            let timeoutReset;
+            
+            setTimeout(() => {
+                const tarjeta = document.getElementById('miembroCard');
+                
+                if (tarjeta) {
+                    tarjeta.addEventListener('click', function() {
+                        const nombre = document.getElementById('miembroNombre')?.textContent;
+                        
+                        if (nombre && nombre.includes('Máximo')) {
+                            clicksMaximo++;
+                            
+                            clearTimeout(timeoutReset);
+                            timeoutReset = setTimeout(() => {
+                                clicksMaximo = 0;
+                            }, 3000);
+                            
+                            if (clicksMaximo >= 5) {
+                                tarjeta.classList.add('temblor-maximo');
+                                setTimeout(() => {
+                                    tarjeta.classList.remove('temblor-maximo');
+                                }, 500);
+                                
+                                clicksMaximo = 0;
+                                clearTimeout(timeoutReset);
+                            }
+                        }
+                    });
+                }
+            }, 1500);
+        })();
+    </script>
 
 </body>
 </html>

@@ -10,13 +10,103 @@
     
     <link rel="stylesheet" href="css/animaciones.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts (para mantener consistencia) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Bree+Serif&family=Roboto+Slab:wght@100..900&family=Abril+Fatface&family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilo especial para destacar el primer proyecto */
+        .proyecto-destacado {
+            position: relative;
+            grid-column: 1 / -1; /* Ocupa todo el ancho del grid */
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        .badge-primer-proyecto {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            background: linear-gradient(135deg, #ffd700, #ffa500);
+            color: #1e293b;
+            font-weight: 700;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+            z-index: 10;
+            border: 2px solid white;
+            font-family: 'Bree Serif', serif;
+            letter-spacing: 1px;
+            transform: rotate(-3deg);
+            animation: brillo 2s infinite;
+        }
+        
+        @keyframes brillo {
+            0% { box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3); }
+            50% { box-shadow: 0 10px 30px rgba(255, 215, 0, 0.8); }
+            100% { box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3); }
+        }
+        
+        .badge-primer-proyecto::before {
+            content: "🎸";
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+
+        /* Mensaje en la esquina inferior */
+        .mensaje-esquina {
+            grid-column: 1 / -1;
+            text-align: right;
+            margin-top: 30px;
+            padding: 20px;
+            font-family: 'Bree Serif', serif;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1rem;
+            border-top: 1px dashed rgba(56, 189, 248, 0.3);
+        }
+
+        /* Ajuste para que la imagen del logo tenga el tamaño adecuado */
+        .logo-img {
+            height: 80px;
+            width: 150px;
+            vertical-align: middle;
+            margin-right: 0px;
+            object-fit: cover;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            font-weight: 700;
+            gap: 0px;
+        }
+        
+        /* Hacer el menú de navegación más grande */
+        nav ul li a {
+            font-size: 20px !important;
+            padding: 10px 5px;
+        }
+        
+        /* Ajustar el navbar para que se vea bien con elementos más grandes */
+        .navbar {
+            padding: 15px 80px;
+        }
+        
+        /* Espaciado entre items del menú */
+        nav ul {
+            gap: 40px;
+        }
+    </style>
 </head>
 
 <body>
 
     <header class="navbar">
-        <div class="logo">∞ NIPHERA</div>
+        <div class="logo">
+            <img src="Imagenes/ImagenNiphera.jpeg" alt="NIPHERA" class="logo-img">
+            NIPHERA
+        </div>
         <nav>
             <ul>
                 <li><a href="inicio.html">Inicio</a></li>
@@ -29,69 +119,25 @@
     </header>
 
     <section class="portafolio">
-        <h1>NUESTROS PROYECTOS</h1>
-
-        <div class="filtros">
-            <button class="activo">Todo</button>
-            <button>Desarrollo</button>
-            <button>Ciberseguridad</button>
-            <button>Aplicaciones</button>
-            <button>Servicios</button>
-        </div>
+        <h1>PROYECTOS</h1>
 
         <div class="grid-proyectos">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
+            <!-- PROYECTO DESTACADO: Guitarra Fácil (PRIMER PROYECTO) -->
+            <div class="card proyecto-destacado">
+                <div class="badge-primer-proyecto">
+                    ¡NUESTRO PRIMER PROYECTO!
+                </div>
+                <img src="Imagenes/Guitarra facil.png" alt="Guitarra Fácil - Aprende a tocar guitarra online">
                 <div class="contenido">
-                    <h3>Titulo principal</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="#" class="btn">Ver proyecto →</a>
+                    <h3>Guitarra Fácil</h3>
+                    <p>Plataforma interactiva para aprender a tocar guitarra desde cero. Con lecciones, acordes y canciones populares.</p>
+                    <a href="https://quiet-donut-377d28.netlify.app" target="_blank" rel="noopener noreferrer" class="btn">Visitar proyecto →</a>
                 </div>
             </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6">
-                <div class="contenido">
-                    <h3>Titulo principal</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="#" class="btn">Ver proyecto →</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
-                <div class="contenido">
-                    <h3>Titulo principal</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="#" class="btn">Ver proyecto →</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1505682634904-d7c4a58f6d8b">
-                <div class="contenido">
-                    <h3>Titulo principal</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="#" class="btn">Ver proyecto →</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
-                <div class="contenido">
-                    <h3>Titulo principal</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="#" class="btn">Ver proyecto →</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5">
-                <div class="contenido">
-                    <h3>Titulo principal</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="#" class="btn">Ver proyecto →</a>
-                </div>
+            
+            <!-- Mensaje en la esquina -->
+            <div class="mensaje-esquina">
+                Preparados para recibir más proyectos...
             </div>
         </div>
     </section>

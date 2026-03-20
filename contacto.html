@@ -2,179 +2,436 @@
 <html lang="es">
 
 <head>
-<link rel="stylesheet" href="css/inicio.css"> 
-<link rel="stylesheet" href="css/animaciones.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niphera | Contacto</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Estilos de Niphera (primero los generales, luego los específicos) -->
+    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="css/animaciones.css">
+    <link rel="stylesheet" href="css/contacto.css">
 
-<title>Niphera | Contacto</title>
+    <!-- Font Awesome para iconos (como en inicio.html) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<link rel="stylesheet" href="css/contacto.css">
+    <!-- Google Fonts (misma selección que en inicio.html) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Bree+Serif&family=Roboto+Slab:wght@100..900&family=Abril+Fatface&family=Inter:opsz@14..32&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* SOBREESCRITURAS Y AJUSTES ESPECÍFICOS PARA CONTACTO */
+        
+        /* Ajuste para que la imagen del logo tenga el tamaño adecuado */
+        .logo-img {
+            height: 80px;
+            width: 150px;
+            vertical-align: middle;
+            margin-right: 0px;
+            object-fit: cover;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            font-weight: 700;
+            gap: 0px;
+            font-family: 'Bree Serif', serif; /* Consistencia con otras páginas */
+        }
+        
+        /* Hacer el menú de navegación más grande */
+        nav ul li a {
+            font-size: 20px !important;
+            padding: 10px 5px;
+        }
+        
+        /* Ajustar el navbar para que se vea bien con elementos más grandes */
+        .navbar {
+            padding: 15px 80px;
+        }
+        
+        /* Espaciado entre items del menú */
+        nav ul {
+            gap: 40px;
+        }
 
+        /* HERO: Actualizado con gradiente y estilo Niphera (similar a otras páginas) */
+        .hero-contacto {
+            height: 350px; /* Un poco más alto que antes para darle presencia */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(120deg, #0f172a, #1e3a8a); /* Gradiente azul oscuro Niphera */
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-contacto h1 {
+            font-size: 58px;
+            letter-spacing: 2px;
+            font-family: 'Bree Serif', serif; /* Título con Bree Serif */
+            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 2;
+            position: relative;
+        }
+
+        /* FORMULARIO Y NEWSLETTER - Manteniendo estructura pero mejorando estilos */
+        .contacto {
+            display: flex;
+            gap: 40px;
+            padding: 80px;
+            justify-content: center;
+            background: #f8fafc; /* Fondo suave como en otras secciones */
+        }
+
+        .formulario {
+            width: 600px;
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .fila {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 50px; /* Más redondeado, estilo Niphera */
+            border: 2px solid #e2e8f0;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+            outline: none;
+        }
+
+        textarea {
+            height: 150px;
+            border-radius: 25px;
+            resize: none;
+        }
+
+        .formulario button {
+            padding: 12px 35px;
+            background: transparent;
+            color: #38bdf8;
+            border: 2px solid #38bdf8;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: inset 0 0 5px rgba(56, 189, 248, 0.2), 0 0 10px rgba(56, 189, 248, 0.1);
+        }
+
+        .formulario button:hover {
+            background: #38bdf8;
+            color: white;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 0 20px #38bdf8, 0 0 40px rgba(56, 189, 248, 0.6);
+        }
+
+        /* NEWSLETTER - Rediseñado con estilo Niphera */
+        .newsletter {
+            width: 380px;
+            background: linear-gradient(135deg, #0f172a, #1e293b); /* Gradiente oscuro Niphera */
+            color: white;
+            padding: 40px 30px;
+            border-radius: 30px;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .newsletter h3 {
+            margin-bottom: 15px;
+            font-size: 26px;
+            font-family: 'Bree Serif', serif;
+            color: #38bdf8;
+        }
+
+        .newsletter p {
+            font-size: 15px;
+            margin-bottom: 25px;
+            line-height: 1.7;
+            color: #cbd5e1;
+        }
+
+        .newsletter input {
+            border: 2px solid rgba(56, 189, 248, 0.3);
+            background: rgba(255,255,255,0.1);
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .newsletter input::placeholder {
+            color: #94a3b8;
+        }
+
+        .newsletter input:focus {
+            border-color: #38bdf8;
+            background: rgba(255,255,255,0.15);
+        }
+
+        .newsletter button {
+            width: 100%;
+            padding: 14px;
+            background: transparent;
+            color: #38bdf8;
+            border: 2px solid #38bdf8;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: inset 0 0 5px rgba(56, 189, 248, 0.2), 0 0 10px rgba(56, 189, 248, 0.1);
+        }
+
+        .newsletter button:hover {
+            background: #38bdf8;
+            color: #0f172a;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 0 20px #38bdf8, 0 0 40px rgba(56, 189, 248, 0.6);
+        }
+
+        /* TARJETAS DE INFORMACIÓN */
+        .info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 60px 80px;
+            background: white;
+        }
+
+        .card {
+            width: 300px;
+            background: white;
+            padding: 40px 30px;
+            border-radius: 25px;
+            color: #0f172a;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 45px rgba(56, 189, 248, 0.15);
+            border-color: #38bdf8;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #38bdf8;
+            font-family: 'Bree Serif', serif;
+        }
+
+        .card p {
+            color: #4a5568;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* MAPA */
+        .mapa {
+            padding: 40px 80px 80px;
+            background: #f8fafc;
+        }
+
+        .mapa iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 30px;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+        }
+
+        /* FOOTER - EXACTAMENTE IGUAL AL DE INICIO */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 80px;
+            background: linear-gradient(120deg, #0f172a, #1e3a8a);
+            color: white;
+        }
+
+        .footer h3 {
+            font-family: 'Bree Serif', serif;
+            margin-bottom: 15px;
+            font-size: 24px;
+            color: white;
+        }
+
+        .footer p {
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width: 1000px) {
+            .navbar {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .contacto {
+                flex-direction: column;
+                align-items: center;
+                padding: 60px 30px;
+            }
+
+            .formulario, .newsletter {
+                width: 100%;
+                max-width: 550px;
+            }
+
+            .info {
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 30px;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .mapa {
+                padding: 40px 30px;
+            }
+
+            .footer {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 30px;
+                gap: 30px;
+            }
+        }
+
+        @media(max-width: 600px) {
+            .fila {
+                flex-direction: column;
+            }
+            
+            .hero-contacto h1 {
+                font-size: 42px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-
-<!-- NAVBAR -->
-
-<header class="navbar">
-
-<div class="logo">∞ NIPHERA</div>
-
-<nav>
-<ul>
-
-<li><a href="inicio.html">Inicio</a></li>
-<li><a href="servicios.html">Servicios</a></li>
-<li><a href="portafolio.html">Portafolio</a></li>
-<li><a href="contacto.html">Contacto</a></li>
-<li><a href="politicas.html">Politicas</a></li>
-
-</ul>
-</nav>
-
-</header>
-
-
-
-<!-- HERO CONTACTO -->
-
-<section class="hero-contacto">
-
-<h1>CONTÁCTANOS</h1>
-
-</section>
-
-
-
-<!-- FORMULARIO -->
-
-<section class="contacto">
-
-<div class="formulario">
-
-<div class="fila">
-
-<input type="text" placeholder="Nombre">
-<input type="text" placeholder="Numero">
-
-</div>
-
-<input type="email" placeholder="Email">
-
-<textarea placeholder="Mensaje"></textarea>
-
-<button>Enviar</button>
-
-</div>
-
-
-
-<div class="newsletter">
-
-<h3>Nuestro Newsletters</h3>
-
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-sed do eiusmod tempor incididunt ut labore.
-</p>
-
-<input type="email" placeholder="Email">
-
-<button>Enviar</button>
-
-</div>
-
-</section>
-
-
-
-<!-- TARJETAS -->
-
-<section class="info">
-
-<div class="card">
-
-<h3>📞 (809)-000-0000</h3>
-
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-sed do eiusmod tempor incididunt ut labore.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>✉ niphera@gmail.com</h3>
-
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-sed do eiusmod tempor incididunt ut labore.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>📍 Dirección</h3>
-
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-sed do eiusmod tempor incididunt ut labore.
-</p>
-
-</div>
-
-</section>
-
-
-
-<!-- MAPA -->
-
-<section class="mapa">
-
-<iframe
-src="https://maps.google.com/maps?q=dominican%20republic&t=&z=7&ie=UTF8&iwloc=&output=embed">
-</iframe>
-
-</section>
-
-
-
-<!-- FOOTER -->
-
-<footer>
-
-<div>
-
-<h3>NIPHERA</h3>
-
-<p>Conoce mas sobre nosotros visitando nuestra red social</p>
-
-<p>@programming2526</p>
-
-</div>
-
-<div>
-
-<h3>Legal</h3>
-
-<p>Políticas de privacidad</p>
-<p>Términos y condiciones</p>
-
-</div>
-
-</footer>
-
-<script src="https://unpkg.com/scrollreveal"></script>
-<script src="js/animaciones.js"></script>
-
+    <!-- NAVBAR (IDÉNTICA A LAS OTRAS PÁGINAS) -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="Imagenes/ImagenNiphera.jpeg" alt="NIPHERA" class="logo-img">
+            NIPHERA
+        </div>
+        <nav>
+            <ul>
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="portafolio.html">Portafolio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="politicas.html">Políticas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO CONTACTO (REDISEÑADO CON ESTILO NIPHERA) -->
+    <section class="hero-contacto">
+        <h1>CONTÁCTANOS</h1>
+    </section>
+
+    <!-- FORMULARIO Y NEWSLETTER (CON NUEVOS ESTILOS) -->
+    <section class="contacto">
+        <div class="formulario">
+            <div class="fila">
+                <input type="text" placeholder="Nombre">
+                <input type="text" placeholder="Teléfono">
+            </div>
+            <input type="email" placeholder="Correo electrónico">
+            <textarea placeholder="Mensaje"></textarea>
+            <button>Enviar mensaje</button>
+        </div>
+
+        <div class="newsletter">
+            <h3>Newsletter</h3>
+            <p>Suscríbete para recibir las últimas novedades y proyectos de Niphera directamente en tu correo.</p>
+            <input type="email" placeholder="Tu correo electrónico">
+            <button>Suscribirse</button>
+        </div>
+    </section>
+
+    <!-- TARJETAS DE INFORMACIÓN (CON ESTILO MEJORADO) -->
+    <section class="info">
+        <div class="card">
+            <h3><i class="fas fa-phone-alt" style="margin-right: 10px;"></i> (809)-000-0000</h3>
+            <p>Estamos disponibles para atenderte en horario de oficina. No dudes en llamarnos para cualquier consulta.</p>
+        </div>
+
+        <div class="card">
+            <h3><i class="far fa-envelope" style="margin-right: 10px;"></i> niphera@gmail.com</h3>
+            <p>Envíanos un correo con tus preguntas o proyectos. Te responderemos a la mayor brevedad posible.</p>
+        </div>
+
+        <div class="card">
+            <h3><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> Dirección</h3>
+            <p>Politécnico Vicente Aquilino Santos, Santo Domingo, República Dominicana</p>
+        </div>
+    </section>
+
+    <!-- MAPA -->
+    <section class="mapa">
+        <iframe
+            src="https://maps.google.com/maps?q=politecnico%20vicente%20aquilino%20santos&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            allowfullscreen>
+        </iframe>
+    </section>
+
+    <!-- FOOTER (IDÉNTICO AL DE INICIO) -->
+    <footer class="footer">
+        <div>
+            <h3>NIPHERA</h3>
+            <p>Desarrollando soluciones digitales innovadoras desde 2026</p>
+            <p>Polítécnico Vicente Aquilino Santos</p>
+        </div>
+        <div>
+            <h3>Legal</h3>
+            <p>Políticas de privacidad</p>
+            <p>Términos y condiciones</p>
+            <p>© 2026 Niphera</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="js/animaciones.js"></script>
+    
+    <!-- Script opcional para animaciones extra de contacto -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Aquí podrías agregar animaciones específicas si lo deseas
+            console.log('Página de contacto Niphera lista');
+        });
+    </script>
 </body>
 </html>

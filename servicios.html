@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +8,94 @@
     <link rel="stylesheet" href="css/servicios.css">
     <link rel="stylesheet" href="css/animaciones.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Bree+Serif&family=Roboto+Slab:wght@100..900&family=Abril+Fatface&family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ESTILOS ADICIONALES PARA GARANTIZAR QUE TODO FUNCIONE */
+        .imagen-principal {
+            width: 100%;
+            height: 450px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 3px solid #38bdf8;
+            transition: opacity 0.3s ease;
+        }
+        
+        .info-servicio {
+            text-align: center;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: opacity 0.3s ease;
+        }
+        
+        .info-servicio h2 {
+            color: #1e293b;
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-family: 'Bree Serif', serif;
+        }
+        
+        .info-servicio p {
+            color: #4a5568;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        .servicios h1 span {
+            color: #7aa2ff;
+        }
 
+        /* Ajuste para que la imagen del logo tenga el tamaño adecuado */
+        .logo-img {
+            height: 80px;
+            width: 150px;
+            vertical-align: middle;
+            margin-right: 0px;
+            object-fit: cover;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            font-weight: 700;
+            gap: 0px;
+        }
+        
+        /* Hacer el menú de navegación más grande */
+        nav ul li a {
+            font-size: 20px !important;
+            padding: 10px 5px;
+        }
+        
+        /* Ajustar el navbar para que se vea bien con elementos más grandes */
+        .navbar {
+            padding: 15px 80px;
+        }
+        
+        /* Espaciado entre items del menú */
+        nav ul {
+            gap: 40px;
+        }
+    </style>
+</head>
 <body>
 
     <header class="navbar">
         <div class="logo">
-            <span>∞</span> NIPHERA
+            <img src="Imagenes/ImagenNiphera.jpeg" alt="NIPHERA" class="logo-img">
+            NIPHERA
         </div>
         <nav>
             <ul>
@@ -24,88 +103,113 @@
                 <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="portafolio.html">Portafolio</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="politicas.html">Politicas</a></li>
+                <li><a href="politicas.html">Políticas</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- SECCIÓN SERVICIOS CON GALERÍA -->
     <section class="servicios">
         <h1>NUESTROS <span>SERVICIOS</span></h1>
-        <div class="servicios-contenedor">
-            <div class="servicio">
-                <div class="img"></div>
-                <h3>SERVICIO 1</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-            </div>
-            <div class="servicio">
-                <div class="img"></div>
-                <h3>SERVICIO 2</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-            </div>
-            <div class="servicio">
-                <div class="img"></div>
-                <h3>SERVICIO 3</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-            </div>
-            <div class="servicio">
-                <div class="img"></div>
-                <h3>SERVICIO 4</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-            </div>
+        
+        <!-- GALERÍA CON FLECHAS -->
+        <div class="galeria-container">
+            <!-- Flecha Izquierda -->
+            <button class="flecha-nav flecha-izquierda" id="flechaIzq">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <!-- Flecha Derecha -->
+            <button class="flecha-nav flecha-derecha" id="flechaDer">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <!-- Imagen Principal (se actualizará con JS) -->
+            <div class="imagen-principal" id="imagenPrincipal"></div>
+            
+            <!-- Información del Servicio Actual (se actualizará con JS) -->
+            <div class="info-servicio" id="infoServicio"></div>
         </div>
     </section>
 
+    <!-- FORTALEZAS -->
     <section class="fortalezas">
         <h2>NUESTRAS <span>FORTALEZAS</span></h2>
         <div class="fortalezas-grid">
-            <div class="fortaleza">Fortaleza 1</div>
-            <div class="fortaleza">Fortaleza 2</div>
-            <div class="fortaleza">Fortaleza 3</div>
+            <div class="fortaleza">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Formación técnica especializada</h3>
+                <p>Contamos con conocimientos sólidos respaldados por nuestra formación en el Politécnico Vicente Aquilino Santos.</p>
+            </div>
+            <div class="fortaleza">
+                <i class="fas fa-rocket"></i>
+                <h3>Enfoque en la innovación tecnológica</h3>
+                <p>Buscamos constantemente nuevas formas de aplicar la tecnología para ofrecer soluciones modernas y eficientes.</p>
+            </div>
+            <div class="fortaleza">
+                <i class="fas fa-sync-alt"></i>
+                <h3>Adaptabilidad al entorno digital</h3>
+                <p>Nos ajustamos a las necesidades cambiantes del mercado y las tendencias tecnológicas actuales.</p>
+            </div>
         </div>
     </section>
 
+    <!-- SECCIÓN DE VIDEO -->
     <section class="video">
         <div class="video-img"></div>
         <div class="video-box">
-            <h3>Titulo de video comercial</h3>
+            <h3>Descubre cómo transformamos tu negocio</h3>
             <video controls>
                 <source src="video.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
             </video>
         </div>
     </section>
 
+    <!-- SECCIÓN DE RAZONES - PAPER & PINS STYLE (CON TACHUELAS) -->
     <section class="razones">
         <h2>RAZONES PARA <br> CONFIAR EN <span>NOSOTROS</span></h2>
-        <div class="razones-grid">
-            <div class="razon">
+        
+        <div class="razones-paper">
+            <!-- Razón 1 - Papel amarillo -->
+            <div class="paper-card">
                 <h3>01</h3>
-                <h4>Titulo</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                <h4>Compromiso con la innovación</h4>
+                <p>En NIPHERA trabajamos con una visión orientada al futuro, buscando constantemente nuevas formas de aplicar la tecnología para ofrecer soluciones modernas y eficientes.</p>
             </div>
-            <div class="razon">
+            
+            <!-- Razón 2 - Papel azul -->
+            <div class="paper-card">
                 <h3>02</h3>
-                <h4>Titulo</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                <h4>Enfoque en las necesidades del cliente</h4>
+                <p>Nos esforzamos por comprender las necesidades de cada organización para ofrecer soluciones que realmente aporten valor y contribuyan a su crecimiento en el entorno digital.</p>
             </div>
-            <div class="razon">
+            
+            <!-- Razón 3 - Papel verde -->
+            <div class="paper-card">
                 <h3>03</h3>
-                <h4>Titulo</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                <h4>Trabajo colaborativo y visión compartida</h4>
+                <p>NIPHERA nace del esfuerzo colectivo y la colaboración, lo que nos permite combinar distintas ideas y perspectivas para desarrollar proyectos sólidos y bien estructurados.</p>
             </div>
-            <div class="razon">
+            
+            <!-- Razón 4 - Papel rosa -->
+            <div class="paper-card">
                 <h3>04</h3>
-                <h4>Titulo</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                <h4>Compromiso con la calidad</h4>
+                <p>Cada proyecto que desarrollamos pasa por rigurosos procesos de calidad para garantizar soluciones confiables y de alto rendimiento.</p>
             </div>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
-        <div class="footer-left">
-            <h3>Niphera</h3>
-            <p>Conoce mas sobre nosotros visitando nuestras redes.</p>
+        <div>
+            <h3>NIPHERA</h3>
+            <p>Desarrollando soluciones digitales innovadoras desde 2026</p>
+            <p>@programming2526</p>
         </div>
-        <div class="footer-right">
+        <div>
+            <h3>Legal</h3>
             <p>Políticas de privacidad</p>
             <p>Términos y condiciones</p>
         </div>
@@ -114,5 +218,107 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="js/animaciones.js"></script>
 
+    <!-- Script de la galería de servicios - VERSIÓN CORREGIDA -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("Script de servicios cargado correctamente");
+            
+            // Datos de los servicios (6 servicios con imágenes de Pexels que SÍ funcionan)
+            const servicios = [
+                {
+                    titulo: "DESARROLLO DE APLICACIONES",
+                    descripcion: "Diseño y desarrollo de aplicaciones adaptadas a las necesidades de cada cliente, enfocadas en mejorar la experiencia del usuario y optimizar procesos digitales.",
+                    imagen: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                },
+                {
+                    titulo: "DESARROLLO DE PÁGINAS WEB",
+                    descripcion: "Creación de sitios web modernos, funcionales y adaptados a diferentes dispositivos, que permiten a las empresas fortalecer su presencia en el entorno digital.",
+                    imagen: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                },
+                {
+                    titulo: "DESARROLLO DE SISTEMAS INFORMÁTICOS",
+                    descripcion: "Diseño e implementación de sistemas digitales que permiten automatizar procesos, organizar información y mejorar la gestión interna de las organizaciones.",
+                    imagen: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                },
+                {
+                    titulo: "GESTIÓN Y DISEÑO DE BASES DE DATOS",
+                    descripcion: "Creación, estructuración y administración de bases de datos para garantizar un manejo seguro, eficiente y organizado de la información empresarial.",
+                    imagen: "https://images.pexels.com/photos/1181672/pexels-photo-1181672.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                },
+                {
+                    titulo: "CIBERSEGURIDAD",
+                    descripcion: "Implementación de medidas y estrategias orientadas a proteger los sistemas y la información digital de las empresas frente a posibles amenazas.",
+                    imagen: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                },
+                {
+                    titulo: "SOPORTE TÉCNICO",
+                    descripcion: "Asistencia y mantenimiento tecnológico para garantizar el correcto funcionamiento de los sistemas y herramientas digitales utilizadas por los clientes.",
+                    imagen: "https://images.pexels.com/photos/840996/pexels-photo-840996.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                }
+            ];
+            
+            // Elementos del DOM
+            const imagenPrincipal = document.getElementById('imagenPrincipal');
+            const infoServicio = document.getElementById('infoServicio');
+            const flechaIzq = document.getElementById('flechaIzq');
+            const flechaDer = document.getElementById('flechaDer');
+            
+            // Verificar que los elementos existen
+            if (!imagenPrincipal || !infoServicio || !flechaIzq || !flechaDer) {
+                console.error("No se encontraron los elementos del DOM");
+                return;
+            }
+            
+            let indiceActual = 0;
+            
+            // Función para actualizar el servicio mostrado
+            function actualizarServicio(index) {
+                const servicio = servicios[index];
+                
+                // Efecto fade
+                imagenPrincipal.style.opacity = '0.5';
+                infoServicio.style.opacity = '0.5';
+                
+                setTimeout(() => {
+                    // Actualizar imagen
+                    imagenPrincipal.style.backgroundImage = `url('${servicio.imagen}')`;
+                    
+                    // Actualizar información
+                    infoServicio.innerHTML = `
+                        <h2>${servicio.titulo}</h2>
+                        <p>${servicio.descripcion}</p>
+                    `;
+                    
+                    imagenPrincipal.style.opacity = '1';
+                    infoServicio.style.opacity = '1';
+                }, 200);
+                
+                indiceActual = index;
+            }
+            
+            // Evento flecha izquierda
+            flechaIzq.addEventListener('click', function() {
+                let nuevoIndex = indiceActual - 1;
+                if (nuevoIndex < 0) {
+                    nuevoIndex = servicios.length - 1;
+                }
+                actualizarServicio(nuevoIndex);
+            });
+            
+            // Evento flecha derecha
+            flechaDer.addEventListener('click', function() {
+                let nuevoIndex = indiceActual + 1;
+                if (nuevoIndex >= servicios.length) {
+                    nuevoIndex = 0;
+                }
+                actualizarServicio(nuevoIndex);
+            });
+            
+            // Inicializar con el primer servicio
+            actualizarServicio(0);
+            
+            console.log("Galería inicializada correctamente");
+        });
+    </script>
 </body>
 </html>

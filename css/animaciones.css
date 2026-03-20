@@ -101,4 +101,80 @@ nav ul li a:hover::after {
     .member:hover, .card:hover, .mission-box:hover {
         transform: none !important;
     }
+
+  }
+/* --- EFECTOS VISUALES GLOBALES NIPHERA --- */
+
+/* 1. Suavizado de carga */
+.servicios {
+    animation: fadeInPage 0.8s ease-out forwards;
+}
+
+@keyframes fadeInPage {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 2. Animación del Título */
+h1 {
+    animation: slideIn 1s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* 3. Micro-interacciones del Menú */
+nav ul li a {
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #38bdf8;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #38bdf8 !important;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* 4. Botones Neón */
+.btn-neon {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none !important;
+    background: transparent;
+    color: #38bdf8;
+    border: 2px solid #38bdf8;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px rgba(56, 189, 248, 0.2);
+}
+
+.btn-neon:hover {
+    background: #38bdf8;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px #38bdf8;
+}
+
+/* 5. Optimización para Móviles */
+@media (max-width: 768px) {
+    .servicio:hover {
+        transform: scale(1.05) !important;
+    }
 }

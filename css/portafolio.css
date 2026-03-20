@@ -10,10 +10,7 @@ background:linear-gradient(135deg,#1f2a44,#2c3e66);
 color:white;
 }
 
-
-
 /* NAVBAR */
-
 .navbar{
 display:flex;
 justify-content:space-between;
@@ -21,6 +18,13 @@ align-items:center;
 padding:20px 80px;
 background:white;
 color:black;
+}
+
+/* Logo con Bree Serif para consistencia */
+.logo {
+    font-family: 'Bree Serif', serif;
+    font-size: 22px;
+    font-weight: 700;
 }
 
 nav ul{
@@ -35,10 +39,7 @@ color:black;
 font-weight:500;
 }
 
-
-
 /* TITULO */
-
 .portafolio{
 padding:80px;
 text-align:center;
@@ -47,57 +48,47 @@ text-align:center;
 .portafolio h1{
 font-size:40px;
 margin-bottom:40px;
+font-family: 'Bree Serif', serif; /* BREE SERIF para el título */
 }
 
-
-
-/* FILTROS */
-
-.filtros{
-display:flex;
-justify-content:center;
-gap:20px;
-margin-bottom:50px;
-}
-
-.filtros button{
-padding:12px 25px;
-border:none;
-border-radius:20px;
-background:#4c5dc2;
-color:white;
-cursor:pointer;
-}
-
-.filtros .activo{
-background:#8fa3ff;
-}
-
-
+/* FILTROS - ELIMINADOS COMPLETAMENTE */
+/* .filtros {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+} */
 
 /* GRID */
-
 .grid-proyectos{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:30px;
 }
 
-
-
 /* CARD */
-
 .card{
 background:rgba(255,255,255,0.08);
 border-radius:12px;
 overflow:hidden;
 backdrop-filter:blur(10px);
+transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(56, 189, 248, 0.2);
 }
 
 .card img{
 width:100%;
 height:200px;
 object-fit:cover;
+transition: transform 0.6s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
 }
 
 .contenido{
@@ -107,14 +98,14 @@ text-align:left;
 
 .contenido h3{
 margin-bottom:10px;
+font-family: 'Bree Serif', serif; /* BREE SERIF para títulos de proyectos */
 }
 
 .contenido p{
 font-size:14px;
 margin-bottom:20px;
+font-family: 'Roboto Slab', serif; /* ROBOTO SLAB para descripciones */
 }
-
-
 
 .btn{
 display:inline-block;
@@ -124,16 +115,62 @@ border-radius:20px;
 text-decoration:none;
 color:black;
 font-weight:600;
+transition: all 0.3s ease;
 }
 
-
+.btn:hover {
+    background: #38bdf8;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px #38bdf8;
+}
 
 /* FOOTER */
-
 footer{
 margin-top:80px;
 padding:40px 80px;
 display:flex;
 justify-content:space-between;
 background:linear-gradient(90deg,#1e2c48,#4b65a6);
+}
+
+footer h3 {
+    font-family: 'Bree Serif', serif; /* BREE SERIF para títulos del footer */
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .portafolio {
+        padding: 40px 20px;
+    }
+    
+    .grid-proyectos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+        gap: 20px;
+    }
+}
+
+@media(max-width:600px){
+    .grid-proyectos {
+        grid-template-columns: 1fr;
+    }
 }

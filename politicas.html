@@ -10,22 +10,60 @@
     <link rel="stylesheet" href="css/animaciones.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Ajuste para que la imagen del logo tenga el tamaño adecuado */
+        .logo-img {
+            height: 80px;
+            width: 150px;
+            vertical-align: middle;
+            margin-right: 0px;
+            object-fit: cover;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            font-weight: 700;
+            gap: 0px;
+        }
+        
+        /* Hacer el menú de navegación más grande */
+        nav ul li a {
+            font-size: 20px !important;
+            padding: 10px 5px;
+        }
+        
+        /* Ajustar el navbar para que se vea bien con elementos más grandes */
+        .navbar {
+            padding: 15px 80px;
+        }
+        
+        /* Espaciado entre items del menú */
+        nav ul {
+            gap: 40px;
+        }
+    </style>
 </head>
 
 <body>
 
-    <header class="navbar">
-        <div class="logo">∞ NIPHERA</div>
-        <nav>
-            <ul>
-                <li><a href="inicio.html">Inicio</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="portafolio.html">Portafolio</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="politicas.html">Políticas de Privacidad</a></li>
-            </ul>
-        </nav>
-    </header>
+<header class="navbar">
+    <div class="logo">
+        <img src="Imagenes/ImagenNiphera.jpeg" alt="NIPHERA" class="logo-img">
+        NIPHERA
+    </div>
+    <nav>
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="portafolio.html">Portafolio</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="politicas.html">Políticas</a></li>
+        </ul>
+    </nav>
+</header>
 
     <section class="politicas">
         <h1>POLÍTICAS DE PRIVACIDAD</h1>
