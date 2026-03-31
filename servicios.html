@@ -8,14 +8,10 @@
     <link rel="stylesheet" href="css/servicios.css">
     <link rel="stylesheet" href="css/animaciones.css">
 
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Bree+Serif&family=Roboto+Slab:wght@100..900&family=Abril+Fatface&family=Inter:opsz@14..32&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* ESTILOS ADICIONALES PARA GARANTIZAR QUE TODO FUNCIONE */
         .imagen-principal {
             width: 100%;
             height: 450px;
@@ -56,7 +52,6 @@
             color: #7aa2ff;
         }
 
-        /* Ajuste para que la imagen del logo tenga el tamaño adecuado */
         .logo-img {
             height: 80px;
             width: 150px;
@@ -71,22 +66,131 @@
             font-size: 28px;
             font-weight: 700;
             gap: 0px;
+            font-family: 'Bree Serif', serif;
+            color: #1e293b;
         }
         
-        /* Hacer el menú de navegación más grande */
         nav ul li a {
             font-size: 20px !important;
             padding: 10px 5px;
+            text-decoration: none !important;
+            color: #333;
+            font-weight: 500;
         }
         
-        /* Ajustar el navbar para que se vea bien con elementos más grandes */
+        nav ul li a:hover {
+            color: #38bdf8 !important;
+        }
+        
         .navbar {
             padding: 15px 80px;
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
-        /* Espaciado entre items del menú */
         nav ul {
+            display: flex;
+            list-style: none;
             gap: 40px;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 80px;
+            background: linear-gradient(120deg, #0f172a, #1e3a8a);
+            color: white;
+            margin-top: 0;
+        }
+
+        .footer h3 {
+            font-family: 'Bree Serif', serif;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .footer p {
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+            color: #38bdf8;
+        }
+
+        /* Estilos para la sección de video - SIN el elemento "Vista previa" */
+        .video {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            padding: 80px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            flex-wrap: wrap;
+        }
+
+        .video-box {
+            text-align: center;
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .video-box h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-family: 'Bree Serif', serif;
+        }
+
+        .video-box video {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        /* Texto descriptivo al lado del video */
+        .video-description {
+            flex: 1;
+            max-width: 400px;
+            text-align: left;
+            padding: 20px;
+        }
+
+        .video-description h4 {
+            font-size: 28px;
+            font-family: 'Bree Serif', serif;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .video-description p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #e2e8f0;
+            margin-bottom: 20px;
+        }
+
+        .video-description i {
+            color: #38bdf8;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 1000px) {
+            .navbar { flex-direction: column; padding: 20px; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .footer { flex-direction: column; text-align: center; padding: 40px 30px; gap: 30px; }
+            .video { flex-direction: column; padding: 40px 20px; gap: 30px; }
+            .video-box { max-width: 100%; }
+            .video-description { text-align: center; max-width: 100%; }
         }
     </style>
 </head>
@@ -108,31 +212,21 @@
         </nav>
     </header>
 
-    <!-- SECCIÓN SERVICIOS CON GALERÍA -->
     <section class="servicios">
         <h1>NUESTROS <span>SERVICIOS</span></h1>
         
-        <!-- GALERÍA CON FLECHAS -->
         <div class="galeria-container">
-            <!-- Flecha Izquierda -->
             <button class="flecha-nav flecha-izquierda" id="flechaIzq">
                 <i class="fas fa-chevron-left"></i>
             </button>
-            
-            <!-- Flecha Derecha -->
             <button class="flecha-nav flecha-derecha" id="flechaDer">
                 <i class="fas fa-chevron-right"></i>
             </button>
-            
-            <!-- Imagen Principal (se actualizará con JS) -->
             <div class="imagen-principal" id="imagenPrincipal"></div>
-            
-            <!-- Información del Servicio Actual (se actualizará con JS) -->
             <div class="info-servicio" id="infoServicio"></div>
         </div>
     </section>
 
-    <!-- FORTALEZAS -->
     <section class="fortalezas">
         <h2>NUESTRAS <span>FORTALEZAS</span></h2>
         <div class="fortalezas-grid">
@@ -154,45 +248,42 @@
         </div>
     </section>
 
-    <!-- SECCIÓN DE VIDEO -->
+    <!-- SECCIÓN DE VIDEO - SIN EL ELEMENTO "Vista previa" Y CON TEXTO DESCRIPTIVO -->
     <section class="video">
-        <div class="video-img"></div>
         <div class="video-box">
             <h3>Descubre cómo transformamos tu negocio</h3>
             <video controls>
-                <source src="video.mp4" type="video/mp4">
+                <source src="Imagenes/NIPHERA REVISIÓN 1.1.mp4" type="video/mp4">
                 Tu navegador no soporta el elemento de video.
             </video>
         </div>
+        <div class="video-description">
+            <h4><i class="fas fa-play-circle"></i> Conoce Niphera</h4>
+            <p>En este video te mostramos nuestra visión, misión y los servicios que ofrecemos para impulsar la transformación digital de tu empresa.</p>
+            <p><i class="fas fa-check-circle"></i> Desarrollo de software a medida</p>
+            <p><i class="fas fa-check-circle"></i> Páginas web modernas y funcionales</p>
+            <p><i class="fas fa-check-circle"></i> Soluciones de ciberseguridad</p>
+        </div>
     </section>
 
-    <!-- SECCIÓN DE RAZONES - PAPER & PINS STYLE (CON TACHUELAS) -->
     <section class="razones">
         <h2>RAZONES PARA <br> CONFIAR EN <span>NOSOTROS</span></h2>
-        
         <div class="razones-paper">
-            <!-- Razón 1 - Papel amarillo -->
             <div class="paper-card">
                 <h3>01</h3>
                 <h4>Compromiso con la innovación</h4>
                 <p>En NIPHERA trabajamos con una visión orientada al futuro, buscando constantemente nuevas formas de aplicar la tecnología para ofrecer soluciones modernas y eficientes.</p>
             </div>
-            
-            <!-- Razón 2 - Papel azul -->
             <div class="paper-card">
                 <h3>02</h3>
                 <h4>Enfoque en las necesidades del cliente</h4>
                 <p>Nos esforzamos por comprender las necesidades de cada organización para ofrecer soluciones que realmente aporten valor y contribuyan a su crecimiento en el entorno digital.</p>
             </div>
-            
-            <!-- Razón 3 - Papel verde -->
             <div class="paper-card">
                 <h3>03</h3>
                 <h4>Trabajo colaborativo y visión compartida</h4>
                 <p>NIPHERA nace del esfuerzo colectivo y la colaboración, lo que nos permite combinar distintas ideas y perspectivas para desarrollar proyectos sólidos y bien estructurados.</p>
             </div>
-            
-            <!-- Razón 4 - Papel rosa -->
             <div class="paper-card">
                 <h3>04</h3>
                 <h4>Compromiso con la calidad</h4>
@@ -201,29 +292,25 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
+    <footer class="footer">
         <div>
             <h3>NIPHERA</h3>
             <p>Desarrollando soluciones digitales innovadoras desde 2026</p>
-            <p>@programming2526</p>
+            <p>Polítécnico Vicente Aquilino Santos</p>
         </div>
         <div>
             <h3>Legal</h3>
-            <p>Políticas de privacidad</p>
-            <p>Términos y condiciones</p>
+            <p><a href="politicas.html">Políticas de privacidad</a></p>
+            <p><a href="politicas.html">Términos y condiciones</a></p>
+            <p>© 2026 Niphera</p>
         </div>
     </footer>
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="js/animaciones.js"></script>
 
-    <!-- Script de la galería de servicios - VERSIÓN CORREGIDA -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            console.log("Script de servicios cargado correctamente");
-            
-            // Datos de los servicios (6 servicios con imágenes de Pexels que SÍ funcionan)
             const servicios = [
                 {
                     titulo: "DESARROLLO DE APLICACIONES",
@@ -257,67 +344,45 @@
                 }
             ];
             
-            // Elementos del DOM
             const imagenPrincipal = document.getElementById('imagenPrincipal');
             const infoServicio = document.getElementById('infoServicio');
             const flechaIzq = document.getElementById('flechaIzq');
             const flechaDer = document.getElementById('flechaDer');
             
-            // Verificar que los elementos existen
-            if (!imagenPrincipal || !infoServicio || !flechaIzq || !flechaDer) {
-                console.error("No se encontraron los elementos del DOM");
-                return;
-            }
+            if (!imagenPrincipal || !infoServicio || !flechaIzq || !flechaDer) return;
             
             let indiceActual = 0;
             
-            // Función para actualizar el servicio mostrado
             function actualizarServicio(index) {
                 const servicio = servicios[index];
-                
-                // Efecto fade
                 imagenPrincipal.style.opacity = '0.5';
                 infoServicio.style.opacity = '0.5';
                 
                 setTimeout(() => {
-                    // Actualizar imagen
                     imagenPrincipal.style.backgroundImage = `url('${servicio.imagen}')`;
-                    
-                    // Actualizar información
                     infoServicio.innerHTML = `
                         <h2>${servicio.titulo}</h2>
                         <p>${servicio.descripcion}</p>
                     `;
-                    
                     imagenPrincipal.style.opacity = '1';
                     infoServicio.style.opacity = '1';
                 }, 200);
-                
                 indiceActual = index;
             }
             
-            // Evento flecha izquierda
             flechaIzq.addEventListener('click', function() {
                 let nuevoIndex = indiceActual - 1;
-                if (nuevoIndex < 0) {
-                    nuevoIndex = servicios.length - 1;
-                }
+                if (nuevoIndex < 0) nuevoIndex = servicios.length - 1;
                 actualizarServicio(nuevoIndex);
             });
             
-            // Evento flecha derecha
             flechaDer.addEventListener('click', function() {
                 let nuevoIndex = indiceActual + 1;
-                if (nuevoIndex >= servicios.length) {
-                    nuevoIndex = 0;
-                }
+                if (nuevoIndex >= servicios.length) nuevoIndex = 0;
                 actualizarServicio(nuevoIndex);
             });
             
-            // Inicializar con el primer servicio
             actualizarServicio(0);
-            
-            console.log("Galería inicializada correctamente");
         });
     </script>
 </body>

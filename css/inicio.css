@@ -1,3 +1,22 @@
+/* SOBRESCRIBIR COMPLETAMENTE LOS ESTILOS DE LA IMAGEN DEL HERO */
+.hero-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0 !important;      /* Sin bordes redondeados */
+    box-shadow: none !important;       /* Sin sombras */
+    transition: none !important;       /* Sin animaciones */
+    transform: none !important;        /* Sin transformaciones */
+    filter: none !important;           /* Sin filtros */
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+}
+
+/* También eliminar cualquier sombra del contenedor */
+.hero-img {
+    box-shadow: none !important;
+    filter: none !important;
+}
 /* --- CONFIGURACIÓN BASE NIPHERA --- */
 * {
     margin: 0;
@@ -81,6 +100,8 @@ nav a:hover::after {
 .hero-text {
     max-width: 500px;
 }
+
+
 
 .hero h1 {
     font-size: 48px;
@@ -949,3 +970,4 @@ nav a:hover::after {
         margin-top: 30px;
     }
 }
+

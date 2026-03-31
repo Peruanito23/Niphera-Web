@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +8,10 @@
     <link rel="stylesheet" href="css/politicas.css">
     <link rel="stylesheet" href="css/animaciones.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts - MISMA QUE LAS DEMÁS PÁGINAS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Bree+Serif&family=Roboto+Slab:wght@100..900&family=Abril+Fatface&family=Inter:opsz@14..32&display=swap" rel="stylesheet">
     
     <style>
-        /* Ajuste para que la imagen del logo tenga el tamaño adecuado */
         .logo-img {
             height: 80px;
             width: 150px;
@@ -27,26 +26,74 @@
             font-size: 28px;
             font-weight: 700;
             gap: 0px;
+            font-family: 'Bree Serif', serif;  /* MISMA FUENTE QUE LAS DEMÁS PÁGINAS */
+            color: #1e293b;  /* MISMO COLOR QUE LAS DEMÁS PÁGINAS */
         }
         
-        /* Hacer el menú de navegación más grande */
         nav ul li a {
             font-size: 20px !important;
             padding: 10px 5px;
+            text-decoration: none !important;
+            color: #333;
+            font-weight: 500;
         }
         
-        /* Ajustar el navbar para que se vea bien con elementos más grandes */
+        nav ul li a:hover {
+            color: #38bdf8 !important;
+        }
+        
         .navbar {
             padding: 15px 80px;
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
-        /* Espaciado entre items del menú */
         nav ul {
+            display: flex;
+            list-style: none;
             gap: 40px;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 80px;
+            background: linear-gradient(120deg, #0f172a, #1e3a8a);
+            color: white;
+            margin-top: 0;
+        }
+
+        footer h3 {
+            font-family: 'Bree Serif', serif;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        footer p {
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+            color: #38bdf8;
+        }
+
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; padding: 20px; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            footer { flex-direction: column; text-align: center; padding: 40px 30px; gap: 30px; }
         }
     </style>
 </head>
-
 <body>
 
 <header class="navbar">
@@ -155,13 +202,14 @@
     <footer>
         <div>
             <h3>NIPHERA</h3>
-            <p>Conoce más sobre nosotros visitando nuestra red social</p>
-            <p>@programming2526</p>
+            <p>Desarrollando soluciones digitales innovadoras desde 2026</p>
+            <p>Polítécnico Vicente Aquilino Santos</p>
         </div>
         <div>
             <h3>Legal</h3>
-            <p>Políticas de privacidad</p>
-            <p>Términos y condiciones</p>
+            <p><a href="politicas.html">Políticas de privacidad</a></p>
+            <p><a href="politicas.html">Términos y condiciones</a></p>
+            <p>© 2026 Niphera</p>
         </div>
     </footer>
 

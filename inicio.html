@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Bree+Serif&family=Roboto+Slab:wght@100..900&family=Abril+Fatface&family=Inter:opsz@14..32&display=swap" rel="stylesheet">
     
     <style>
-        /* Ajuste para que la imagen del logo tenga el tamaño adecuado */
+        /* Ajustes generales */
         .logo-img {
             height: 80px;
             width: 150px;
@@ -30,35 +30,196 @@
             font-size: 28px;
             font-weight: 700;
             gap: 0px;
+            font-family: 'Bree Serif', serif;
+            color: #1e293b;
         }
         
-        /* Hacer el menú de navegación más grande */
         nav ul li a {
             font-size: 20px !important;
             padding: 10px 5px;
+            text-decoration: none !important;
+            color: #333;
+            font-weight: 500;
         }
         
-        /* Ajustar el navbar para que se vea bien con elementos más grandes */
+        nav ul li a:hover {
+            color: #38bdf8 !important;
+        }
+        
         .navbar {
             padding: 15px 80px;
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
-        /* Espaciado entre items del menú */
         nav ul {
+            display: flex;
+            list-style: none;
             gap: 40px;
         }
 
-        /* Ajustes para la nueva imagen laptod */
+        .hero {
+            background: #121b28 !important;
+        }
+
         .hero-img img {
             max-width: 100%;
             height: auto;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            transition: transform 0.5s ease;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            transition: none !important;
+            transform: none !important;
+            filter: none !important;
+            background: transparent !important;
+            border: none !important;
+            outline: none !important;
         }
 
-        .hero-img img:hover {
-            transform: scale(1.05) rotate(2deg);
+        .hero-img {
+            box-shadow: none !important;
+            filter: none !important;
+        }
+
+        .hero-subtitle {
+            color: #38bdf8 !important;
+        }
+
+        .hero-text p {
+            color: #cbd5e1 !important;
+        }
+
+        /* ===== SECCIÓN DE HISTORIA NUEVA Y COMPLETAMENTE INDEPENDIENTE ===== */
+        .nuestra-historia {
+            padding: 100px 80px;
+            background-color: #0f172a;
+            color: white;
+        }
+
+        .historia-contenedor {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .historia-imagen {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .historia-imagen img {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .historia-imagen img:hover {
+            transform: scale(1.02);
+        }
+
+        .historia-texto {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .historia-texto h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            font-family: 'Bree Serif', serif;
+            color: #38bdf8;
+        }
+
+        .historia-texto p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #e2e8f0;
+            margin-bottom: 20px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Estilos mejorados para el avatar con foto - MÁS CENTRALIZADO */
+        .miembro-avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid white;
+            box-shadow: 0 15px 30px rgba(56, 189, 248, 0.3);
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            background-color: #38bdf8;
+        }
+
+        .miembro-avatar span {
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            font-family: 'Bree Serif', serif;
+        }
+
+        .miembro-avatar.has-photo span {
+            display: none;
+        }
+
+        @media (max-width: 1000px) {
+            .navbar {
+                flex-direction: column;
+                padding: 20px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 20px;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .nuestra-historia {
+                padding: 60px 30px;
+            }
+            .historia-contenedor {
+                flex-direction: column;
+                gap: 40px;
+            }
+            .historia-imagen img {
+                max-width: 100%;
+            }
+            .miembro-avatar {
+                width: 160px;
+                height: 160px;
+            }
+            .miembro-avatar span {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .miembro-avatar {
+                width: 140px;
+                height: 140px;
+                margin-bottom: 15px;
+            }
+            .miembro-avatar span {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -80,7 +241,7 @@
         </nav>
     </header>
 
-    <!-- HERO CON NUEVA IMAGEN LAPTOD -->
+    <!-- HERO -->
     <section class="hero">
         <div class="hero-text">
             <h1>Si lo puedes imaginar, <br> lo puedes programar.</h1>
@@ -96,7 +257,7 @@
         </div>
     </section>
 
-    <!-- SOBRE NOSOTROS (con historia real) -->
+    <!-- SOBRE NOSOTROS -->
     <section class="about">
         <div class="container">
             <span class="section-tag"><h1>SOBRE NOSOTROS</h1></span>
@@ -120,22 +281,21 @@
         </div>
     </section>
 
-    <!-- NUESTRA HISTORIA (versión resumida) -->
-    <section class="history">
-        <div class="container">
-            <span class="section-tag light"><h1>NUESTRA HISTORIA</h1></span>
-            <div class="history-grid">
-                <div class="history-image">
-                    <div class="image-placeholder"></div>
-                </div>
-                <div class="history-text">
-                    <p>NIPHERA nace en el año 2026 como parte de un proyecto de emprendimiento del Politécnico Vicente Aquilino Santos, dentro del área de Desarrollo y Administración de Aplicaciones Informáticas. Surge como una iniciativa colectiva de los 27 estudiantes del grado, con el propósito de aplicar los conocimientos adquiridos durante nuestra formación técnica.</p>
-                </div>
+    <!-- NUESTRA HISTORIA - SECCIÓN NUEVA E INDEPENDIENTE -->
+    <section class="nuestra-historia">
+        <div class="historia-contenedor">
+            <div class="historia-imagen">
+                <img src="Imagenes/GRUPO COMPLETO NIPHERA 1.2.jpg" alt="Grupo completo Niphera - Los 27 fundadores">
+            </div>
+            <div class="historia-texto">
+                <h2>NUESTRA HISTORIA</h2>
+                <p>NIPHERA nace en el año 2026 como parte de un proyecto de emprendimiento del Politécnico Vicente Aquilino Santos, dentro del área de Desarrollo y Administración de Aplicaciones Informáticas. Surge como una iniciativa colectiva de los 27 estudiantes del grado, con el propósito de aplicar los conocimientos adquiridos durante nuestra formación técnica.</p>
+                <p>Hoy, somos una familia de 27 profesionales apasionados por la tecnología, comprometidos con la excelencia y la innovación, trabajando juntos para transformar ideas en soluciones digitales que marcan la diferencia.</p>
             </div>
         </div>
     </section>
 
-    <!-- MISIÓN Y VISIÓN (con textos reales) -->
+    <!-- MISIÓN Y VISIÓN -->
     <section class="mission-vision">
         <div class="container">
             <h2 class="section-title">Nuestra <span>Misión & Visión</span></h2>
@@ -152,7 +312,7 @@
         </div>
     </section>
 
-    <!-- VALORES (con los 6 valores reales) -->
+    <!-- VALORES -->
     <section class="values">
         <div class="container">
             <h2>Nuestros Valores</h2>
@@ -167,19 +327,17 @@
         </div>
     </section>
 
-    <!-- EQUIPO - CARRUSEL CON TODOS LOS MIEMBROS -->
+    <!-- EQUIPO - CARRUSEL CON FOTOS MEJORADO -->
     <section class="team-carrusel">
         <div class="container">
             <h2>Nuestro Equipo</h2>
             <p class="team-subtitle">Conoce a los 27 profesionales que hacen posible Niphera</p>
             
             <div class="carrusel-container">
-                <!-- Flecha Izquierda -->
                 <button class="carrusel-flecha flecha-izquierda" id="flechaIzq">
                     <i class="fas fa-chevron-left"></i>
                 </button>
                 
-                <!-- Tarjeta del miembro actual -->
                 <div class="miembro-card" id="miembroCard">
                     <div class="miembro-avatar" id="miembroAvatar">
                         <span id="miembroIniciales"></span>
@@ -190,7 +348,6 @@
                     <div class="miembro-dots" id="miembroDots"></div>
                 </div>
                 
-                <!-- Flecha Derecha -->
                 <button class="carrusel-flecha flecha-derecha" id="flechaDer">
                     <i class="fas fa-chevron-right"></i>
                 </button>
@@ -204,14 +361,15 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-        <div class="footer-left">
+        <div>
             <h3>NIPHERA</h3>
             <p>Desarrollando soluciones digitales innovadoras desde 2026</p>
-            <p>Politécnico Vicente Aquilino Santos</p>
+            <p>Polítécnico Vicente Aquilino Santos</p>
         </div>
-        <div class="footer-right">
-            <p>Políticas de privacidad</p>
-            <p>Términos y condiciones</p>
+        <div>
+            <h3>Legal</h3>
+            <p><a href="politicas.html" style="color: white; text-decoration: none;">Políticas de privacidad</a></p>
+            <p><a href="politicas.html" style="color: white; text-decoration: none;">Términos y condiciones</a></p>
             <p>© 2026 Niphera</p>
         </div>
     </footer>
@@ -219,52 +377,38 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="js/animaciones.js"></script>
     
-    <!-- Script del carrusel con TODOS los miembros -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // LISTA COMPLETA DE MIEMBROS DEL EQUIPO NIPHERA
             const miembros = [
-                // Nivel Ejecutivo (C-Suite)
-                { nombre: "Camila H.", cargo: "Directora Ejecutiva", area: "CEO", iniciales: "CH" },
-                { nombre: "Yoheisy DLC.", cargo: "Directora de Operaciones", area: "COO", iniciales: "YD" },
-                { nombre: "Nervi C.", cargo: "Director de Tecnología", area: "CTO", iniciales: "NC" },
-                
-                // Nivel de Gerencia y Estrategia
-                { nombre: "Richard V.", cargo: "Project Manager", area: "Gerencia", iniciales: "RV" },
-                { nombre: "Rainier V.", cargo: "Gestión de Proyectos", area: "Gerencia", iniciales: "RV" },
-                { nombre: "Nelson M.", cargo: "Software Architect", area: "Arquitectura", iniciales: "NM" },
-                { nombre: "Elanny F.", cargo: "Business Analyst", area: "Análisis", iniciales: "EF" },
-                
-                // Nivel de Ingeniería y Desarrollo
-                { nombre: "Samuel M.", cargo: "DevOps Engineer", area: "Infraestructura", iniciales: "SM" },
-                { nombre: "Máximo G.", cargo: "Full Stack Developer", area: "Desarrollo", iniciales: "MG" },
-                { nombre: "Leonardo S.", cargo: "Cybersecurity", area: "Seguridad", iniciales: "LS" },
-                { nombre: "Oliver B.", cargo: "Sales Engineer", area: "Ingeniería", iniciales: "OB" },
-                { nombre: "Andres P.", cargo: "Mobile Developer", area: "Móvil", iniciales: "AP" },
-                { nombre: "Evert G.", cargo: "Backend Developer", area: "Backend", iniciales: "EG" },
-                { nombre: "Orlando S.", cargo: "Frontend Developer", area: "Frontend", iniciales: "OS" },
-                { nombre: "Anthony P.", cargo: "Software Developer", area: "Desarrollo", iniciales: "AP" },
-                
-                // Diseño y Producto
-                { nombre: "Melany H.", cargo: "Product Designer", area: "Diseño", iniciales: "MH" },
-                { nombre: "Lusmileydi H.", cargo: "UX Designer", area: "UX", iniciales: "LH" },
-                { nombre: "Kamely G.", cargo: "UI Designer", area: "UI", iniciales: "KG" },
-                { nombre: "Christopher S.", cargo: "UI Designer", area: "UI", iniciales: "CS" },
-                
-                // Marketing y Operaciones Administrativas
-                { nombre: "Gerelyn B.", cargo: "Marketing", area: "Marketing", iniciales: "GB" },
-                { nombre: "Genesys F.", cargo: "Marketing", area: "Marketing", iniciales: "GF" },
-                { nombre: "Marbelin S.", cargo: "Marketing", area: "Marketing", iniciales: "MS" },
-                { nombre: "Joan P.", cargo: "Recursos Humanos", area: "RRHH", iniciales: "JP" },
-                { nombre: "David T.", cargo: "Recursos Humanos", area: "RRHH", iniciales: "DT" },
-                
-                // Aseguramiento de Calidad y Soporte
-                { nombre: "Juan V.", cargo: "QA Tester", area: "Calidad", iniciales: "JV" },
-                { nombre: "Anderson U.", cargo: "Soporte Técnico", area: "Soporte", iniciales: "AU" },
-                { nombre: "Cleniver E.", cargo: "Soporte Técnico", area: "Soporte", iniciales: "CE" }
+                { nombre: "Camila H.", cargo: "Directora Ejecutiva", area: "CEO", iniciales: "CH", foto: "Camila H.jpg" },
+                { nombre: "Yoheisy DLC.", cargo: "Directora de Operaciones", area: "COO", iniciales: "YD", foto: "Yoheisy DLC.jpg" },
+                { nombre: "Nervi C.", cargo: "Director de Tecnología", area: "CTO", iniciales: "NC", foto: "Nervi C.jpg" },
+                { nombre: "Richard V.", cargo: "Project Manager", area: "Gerencia", iniciales: "RV", foto: "Richard V.jpg" },
+                { nombre: "Rainier V.", cargo: "Gestión de Proyectos", area: "Gerencia", iniciales: "RV", foto: "Rainier V.jpg" },
+                { nombre: "Nelson M.", cargo: "Software Architect", area: "Arquitectura", iniciales: "NM", foto: "Nelson M.jpg" },
+                { nombre: "Elanny F.", cargo: "Business Analyst", area: "Análisis", iniciales: "EF", foto: "Elanny F.jpg" },
+                { nombre: "Samuel M.", cargo: "DevOps Engineer", area: "Infraestructura", iniciales: "SM", foto: "Samuel M.jpg" },
+                { nombre: "Máximo G.", cargo: "Full Stack Developer", area: "Desarrollo", iniciales: "MG", foto: "Máximo G.jpg" },
+                { nombre: "Leonardo S.", cargo: "Cybersecurity", area: "Seguridad", iniciales: "LS", foto: "Leonardo S.jpg" },
+                { nombre: "Oliver B.", cargo: "Sales Engineer", area: "Ingeniería", iniciales: "OB", foto: "Oliver B.jpg" },
+                { nombre: "Andres P.", cargo: "Mobile Developer", area: "Móvil", iniciales: "AP", foto: "Andres P.jpg" },
+                { nombre: "Evert G.", cargo: "Backend Developer", area: "Backend", iniciales: "EG", foto: "Evert G.jpg" },
+                { nombre: "Orlando S.", cargo: "Frontend Developer", area: "Frontend", iniciales: "OS", foto: "Orlando S.jpg" },
+                { nombre: "Anthony P.", cargo: "Software Developer", area: "Desarrollo", iniciales: "AP", foto: "Anthony P.jpg" },
+                { nombre: "Melany H.", cargo: "Product Designer", area: "Diseño", iniciales: "MH", foto: "Melany H.jpg" },
+                { nombre: "Lusmileydi H.", cargo: "UX Designer", area: "UX", iniciales: "LH", foto: "Lusmileydi H.jpg" },
+                { nombre: "Kamely G.", cargo: "UI Designer", area: "UI", iniciales: "KG", foto: "Kamely G.jpg" },
+                { nombre: "Christopher S.", cargo: "UI Designer", area: "UI", iniciales: "CS", foto: "Christopher S.jpg" },
+                { nombre: "Gerelyn B.", cargo: "Marketing", area: "Marketing", iniciales: "GB", foto: "Gerelyn B.jpg" },
+                { nombre: "Genesys F.", cargo: "Marketing", area: "Marketing", iniciales: "GF", foto: "Genesys F.jpg" },
+                { nombre: "Marbelin S.", cargo: "Marketing", area: "Marketing", iniciales: "MS", foto: "Marbelin S.jpg" },
+                { nombre: "Joan P.", cargo: "Recursos Humanos", area: "RRHH", iniciales: "JP", foto: "Joan P.jpg" },
+                { nombre: "David T.", cargo: "Recursos Humanos", area: "RRHH", iniciales: "DT", foto: "David T.jpg" },
+                { nombre: "Juan V.", cargo: "QA Tester", area: "Calidad", iniciales: "JV", foto: "Juan V.jpg" },
+                { nombre: "Anderson U.", cargo: "Soporte Técnico", area: "Soporte", iniciales: "AU", foto: "Anderson U.jpg" },
+                { nombre: "Cleniver E.", cargo: "Soporte Técnico", area: "Soporte", iniciales: "CE", foto: "Cleniver E.jpg" }
             ];
             
-            // Elementos del DOM
             const miembroCard = document.getElementById('miembroCard');
             const miembroAvatar = document.getElementById('miembroAvatar');
             const miembroIniciales = document.getElementById('miembroIniciales');
@@ -278,14 +422,29 @@
             let indiceActual = 0;
             let intervaloAutomatico;
             
-            // Colores para los avatares
-            const colores = [
-                '#38bdf8', '#1e3a8a', '#0f172a', '#4f46e5', '#7c3aed', 
-                '#2563eb', '#0891b2', '#059669', '#d97706', '#dc2626',
-                '#9333ea', '#db2777', '#65a30d', '#0d9488', '#57534e'
-            ];
+            const colores = ['#38bdf8', '#1e3a8a', '#0f172a', '#4f46e5', '#7c3aed', '#2563eb', '#0891b2', '#059669', '#d97706', '#dc2626', '#9333ea', '#db2777', '#65a30d', '#0d9488', '#57534e'];
             
-            // Crear dots
+            function cargarFoto(miembro, avatarElement, index) {
+                const rutaFoto = `Imagenes/${miembro.foto}`;
+                const img = new Image();
+                
+                img.onload = function() {
+                    avatarElement.style.backgroundImage = `url('${rutaFoto}')`;
+                    avatarElement.style.backgroundSize = 'cover';
+                    avatarElement.style.backgroundPosition = 'center top';
+                    avatarElement.classList.add('has-photo');
+                };
+                
+                img.onerror = function() {
+                    const colorIndex = index % colores.length;
+                    avatarElement.style.background = colores[colorIndex];
+                    avatarElement.style.backgroundImage = 'none';
+                    avatarElement.classList.remove('has-photo');
+                };
+                
+                img.src = rutaFoto;
+            }
+            
             function crearDots() {
                 miembroDots.innerHTML = '';
                 miembros.forEach((_, index) => {
@@ -297,31 +456,18 @@
                         reiniciarIntervalo();
                     });
                     miembroDots.appendChild(dot);
-                    
-                    // Mostrar solo primeros 15 dots para no saturar
-                    if (index >= 15) {
-                        dot.style.display = 'none';
-                    }
+                    if (index >= 15) dot.style.display = 'none';
                 });
             }
             
-            // Actualizar miembro mostrado
             function actualizarMiembro(index) {
                 const miembro = miembros[index];
-                
-                // Efecto fade
                 miembroCard.style.opacity = '0.5';
                 miembroCard.style.transform = 'scale(0.98)';
                 
                 setTimeout(() => {
-                    // Cambiar color del avatar
-                    const colorIndex = index % colores.length;
-                    miembroAvatar.style.background = colores[colorIndex];
-                    
-                    // Actualizar iniciales
                     miembroIniciales.textContent = miembro.iniciales;
-                    
-                    // Actualizar textos
+                    cargarFoto(miembro, miembroAvatar, index);
                     miembroNombre.textContent = miembro.nombre;
                     miembroCargo.textContent = miembro.cargo;
                     miembroArea.textContent = miembro.area;
@@ -329,12 +475,10 @@
                     miembroCard.style.opacity = '1';
                     miembroCard.style.transform = 'scale(1)';
                     
-                    // Actualizar dots
                     document.querySelectorAll('.dot').forEach((dot, i) => {
                         if (i === index) dot.classList.add('active');
                         else dot.classList.remove('active');
                         
-                        // Mostrar dots cercanos al actual
                         if (i >= index - 5 && i <= index + 5) {
                             dot.style.display = 'inline-block';
                         } else {
@@ -342,63 +486,35 @@
                         }
                     });
                 }, 200);
-                
                 indiceActual = index;
             }
             
-            // Ir a miembro específico
             function irAMiembro(index) {
                 if (index < 0) index = miembros.length - 1;
                 if (index >= miembros.length) index = 0;
                 actualizarMiembro(index);
             }
             
-            // Siguiente miembro
-            function siguienteMiembro() {
-                irAMiembro(indiceActual + 1);
-            }
+            function siguienteMiembro() { irAMiembro(indiceActual + 1); }
+            function anteriorMiembro() { irAMiembro(indiceActual - 1); }
             
-            // Anterior miembro
-            function anteriorMiembro() {
-                irAMiembro(indiceActual - 1);
-            }
-            
-            // Reiniciar intervalo automático
             function reiniciarIntervalo() {
                 clearInterval(intervaloAutomatico);
                 intervaloAutomatico = setInterval(siguienteMiembro, 4000);
             }
             
-            // Event listeners para flechas
-            flechaIzq.addEventListener('click', function() {
-                anteriorMiembro();
-                reiniciarIntervalo();
-            });
+            flechaIzq.addEventListener('click', () => { anteriorMiembro(); reiniciarIntervalo(); });
+            flechaDer.addEventListener('click', () => { siguienteMiembro(); reiniciarIntervalo(); });
             
-            flechaDer.addEventListener('click', function() {
-                siguienteMiembro();
-                reiniciarIntervalo();
-            });
-            
-            // Inicializar
             crearDots();
             actualizarMiembro(0);
-            
-            // Iniciar rotación automática
             intervaloAutomatico = setInterval(siguienteMiembro, 4000);
             
-            // Pausar al hacer hover
-            miembroCard.addEventListener('mouseenter', () => {
-                clearInterval(intervaloAutomatico);
-            });
-            
-            miembroCard.addEventListener('mouseleave', () => {
-                intervaloAutomatico = setInterval(siguienteMiembro, 4000);
-            });
+            miembroCard.addEventListener('mouseenter', () => clearInterval(intervaloAutomatico));
+            miembroCard.addEventListener('mouseleave', () => { intervaloAutomatico = setInterval(siguienteMiembro, 4000); });
         });
     </script>
-    
-    <!-- EASTER EGG: 5 clicks secretos en Máximo G. -->
+
     <style>
         @keyframes temblor {
             0% { transform: translate(0, 0) rotate(0deg); }
@@ -408,38 +524,25 @@
             80% { transform: translate(5px, -5px) rotate(2deg); }
             100% { transform: translate(0, 0) rotate(0deg); }
         }
-        
-        .temblor-maximo {
-            animation: temblor 0.5s ease-in-out !important;
-        }
+        .temblor-maximo { animation: temblor 0.5s ease-in-out !important; }
     </style>
 
     <script>
         (function() {
             let clicksMaximo = 0;
             let timeoutReset;
-            
             setTimeout(() => {
                 const tarjeta = document.getElementById('miembroCard');
-                
                 if (tarjeta) {
                     tarjeta.addEventListener('click', function() {
                         const nombre = document.getElementById('miembroNombre')?.textContent;
-                        
                         if (nombre && nombre.includes('Máximo')) {
                             clicksMaximo++;
-                            
                             clearTimeout(timeoutReset);
-                            timeoutReset = setTimeout(() => {
-                                clicksMaximo = 0;
-                            }, 3000);
-                            
+                            timeoutReset = setTimeout(() => { clicksMaximo = 0; }, 3000);
                             if (clicksMaximo >= 5) {
                                 tarjeta.classList.add('temblor-maximo');
-                                setTimeout(() => {
-                                    tarjeta.classList.remove('temblor-maximo');
-                                }, 500);
-                                
+                                setTimeout(() => tarjeta.classList.remove('temblor-maximo'), 500);
                                 clicksMaximo = 0;
                                 clearTimeout(timeoutReset);
                             }
@@ -449,6 +552,5 @@
             }, 1500);
         })();
     </script>
-
 </body>
 </html>
