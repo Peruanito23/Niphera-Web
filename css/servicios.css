@@ -550,3 +550,13 @@ footer p {
         font-size: 18px;
     }
 }
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    color: #38bdf8;
+}

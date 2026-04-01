@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="css/inicio.css">
     <link rel="stylesheet" href="css/animaciones.css">
     
+    <!-- Bootstrap Icons para el footer -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
     <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -175,6 +178,38 @@
             display: none;
         }
 
+        /* Footer styles */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 80px;
+            background: linear-gradient(120deg, #0f172a, #1e3a8a);
+            color: white;
+        }
+
+        .footer h3 {
+            font-family: 'Bree Serif', serif;
+            margin-bottom: 15px;
+            font-size: 24px;
+            color: white;
+        }
+
+        .footer p {
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+            color: #38bdf8;
+        }
+
         @media (max-width: 1000px) {
             .navbar {
                 flex-direction: column;
@@ -209,6 +244,12 @@
             .miembro-avatar span {
                 font-size: 2.5rem;
             }
+            .footer {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 30px;
+                gap: 30px;
+            }
         }
         
         @media (max-width: 600px) {
@@ -236,7 +277,7 @@
                 <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="portafolio.html">Portafolio</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="politicas.html">Politicas</a></li>
+                <li><a href="politicas.html">Políticas</a></li>
             </ul>
         </nav>
     </header>
@@ -359,17 +400,23 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER ACTUALIZADO -->
     <footer class="footer">
         <div>
             <h3>NIPHERA</h3>
             <p>Desarrollando soluciones digitales innovadoras desde 2026</p>
-            <p>Polítécnico Vicente Aquilino Santos</p>
+          
+        </div>
+        <div>
+            <h3>Contactos</h3>
+            <p><i class="bi bi-instagram"></i> programming2526_</p>
+            <p><i class="bi bi-whatsapp"></i> 809-952-0863</p>
+            <p><i class="bi bi-envelope-at"></i> info@niphera.com</p>
         </div>
         <div>
             <h3>Legal</h3>
-            <p><a href="politicas.html" style="color: white; text-decoration: none;">Políticas de privacidad</a></p>
-            <p><a href="politicas.html" style="color: white; text-decoration: none;">Términos y condiciones</a></p>
+            <p><a href="politicas.html">Políticas de privacidad</a></p>
+            <p><a href="politicas.html">Términos y condiciones</a></p>
             <p>© 2026 Niphera</p>
         </div>
     </footer>

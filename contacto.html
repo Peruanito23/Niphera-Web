@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="css/animaciones.css">
     <link rel="stylesheet" href="css/contacto.css">
 
+    <!--Iconos Bootstrap Instagram-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Bree+Serif&family=Roboto+Slab:wght@100..900&family=Abril+Fatface&family=Inter:opsz@14..32&display=swap" rel="stylesheet">
 
@@ -103,10 +107,33 @@
             outline: none;
         }
 
+        /* Estilo para campos con error */
+        input.error, textarea.error {
+            border-color: #ef4444 !important;
+            animation: shake 0.3s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
         textarea {
             height: 150px;
             border-radius: 25px;
             resize: none;
+        }
+
+        /* Contador de caracteres */
+        #contador-caracteres {
+            font-size: 12px;
+            color: #64748b;
+            text-align: right;
+            margin-top: -15px;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+            font-family: 'Poppins', sans-serif;
         }
 
         .formulario button {
@@ -119,13 +146,20 @@
             font-weight: 600;
             font-size: 16px;
             transition: all 0.3s ease;
+            box-shadow: inset 0 0 5px rgba(56, 189, 248, 0.2), 0 0 10px rgba(56, 189, 248, 0.1);
         }
 
-        .formulario button:hover {
+        .formulario button:hover:not(:disabled) {
             background: #38bdf8;
             color: white;
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 0 20px #38bdf8;
+            box-shadow: 0 0 20px #38bdf8, 0 0 40px rgba(56, 189, 248, 0.6);
+        }
+
+        .formulario button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
         }
 
         .newsletter {
@@ -181,11 +215,16 @@
             transition: all 0.3s ease;
         }
 
-        .newsletter button:hover {
+        .newsletter button:hover:not(:disabled) {
             background: #38bdf8;
             color: #0f172a;
             transform: translateY(-3px);
             box-shadow: 0 0 20px #38bdf8;
+        }
+
+        .newsletter button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
         }
 
         .info {
@@ -271,6 +310,170 @@
             color: #38bdf8;
         }
 
+        /* Mensaje flotante (Toast) - Diseño Niphera */
+        .toast-message {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 0;
+            border-radius: 20px;
+            font-weight: 500;
+            z-index: 9999;
+            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.2);
+            animation: slideInUp 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            font-family: 'Poppins', sans-serif;
+            max-width: 380px;
+            min-width: 280px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .toast-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+        }
+
+        .toast-icon {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .toast-text {
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.5;
+            letter-spacing: 0.3px;
+        }
+
+        .toast-text strong {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 15px;
+        }
+
+        .toast-close {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            font-size: 12px;
+        }
+
+        .toast-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        /* Toast Success - Estilo Niphera */
+        .toast-success {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border-left: 4px solid #10b981;
+            border-right: 1px solid rgba(16, 185, 129, 0.3);
+            border-top: 1px solid rgba(16, 185, 129, 0.2);
+            border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .toast-success .toast-icon {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+        }
+
+        .toast-success .toast-text {
+            color: #e2e8f0;
+        }
+
+        .toast-success .toast-text strong {
+            color: #10b981;
+        }
+
+        /* Toast Error - Estilo Niphera */
+        .toast-error {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border-left: 4px solid #ef4444;
+            border-right: 1px solid rgba(239, 68, 68, 0.3);
+            border-top: 1px solid rgba(239, 68, 68, 0.2);
+            border-bottom: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        .toast-error .toast-icon {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+        }
+
+        .toast-error .toast-text {
+            color: #e2e8f0;
+        }
+
+        .toast-error .toast-text strong {
+            color: #ef4444;
+        }
+
+        /* Toast Info - Estilo Niphera */
+        .toast-info {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border-left: 4px solid #38bdf8;
+            border-right: 1px solid rgba(56, 189, 248, 0.3);
+            border-top: 1px solid rgba(56, 189, 248, 0.2);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .toast-info .toast-icon {
+            background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+            color: white;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        }
+
+        .toast-info .toast-text {
+            color: #e2e8f0;
+        }
+
+        .toast-info .toast-text strong {
+            color: #38bdf8;
+        }
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideOutDown {
+            from {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+        }
+
+        .toast-hide {
+            animation: slideOutDown 0.3s ease forwards;
+        }
+
         @media(max-width: 1000px) {
             .navbar { flex-direction: column; padding: 20px; }
             nav ul { flex-wrap: wrap; justify-content: center; }
@@ -285,6 +488,21 @@
         @media(max-width: 600px) {
             .fila { flex-direction: column; }
             .hero-contacto h1 { font-size: 42px; }
+            .toast-message {
+                bottom: 20px;
+                right: 20px;
+                left: 20px;
+                max-width: none;
+                min-width: auto;
+            }
+            
+            .toast-content {
+                padding: 14px 18px;
+            }
+            
+            .toast-text {
+                font-size: 13px;
+            }
         }
     </style>
 </head>
@@ -313,30 +531,30 @@
     <section class="contacto">
         <div class="formulario">
             <div class="fila">
-                <input type="text" placeholder="Nombre">
-                <input type="text" placeholder="Teléfono">
+                <input type="text" id="nombre" placeholder="Nombre" autocomplete="name">
+                <input type="tel" id="telefono" placeholder="Teléfono (solo números)" autocomplete="tel">
             </div>
-            <input type="email" placeholder="Correo electrónico">
-            <textarea placeholder="Mensaje"></textarea>
-            <button>Enviar mensaje</button>
+            <input type="email" id="email" placeholder="Correo electrónico" autocomplete="email">
+            <textarea id="mensaje" placeholder="Mensaje (mínimo 10 caracteres, máximo 500)"></textarea>
+            <button id="btnEnviar">Enviar mensaje</button>
         </div>
 
         <div class="newsletter">
             <h3>Newsletter</h3>
             <p>Suscríbete para recibir las últimas novedades y proyectos de Niphera directamente en tu correo.</p>
-            <input type="email" placeholder="Tu correo electrónico">
-            <button>Suscribirse</button>
+            <input type="email" id="newsEmail" placeholder="Tu correo electrónico" autocomplete="email">
+            <button id="btnSuscribir">Suscribirse</button>
         </div>
     </section>
 
     <section class="info">
         <div class="card">
-            <h3><i class="fas fa-phone-alt" style="margin-right: 10px;"></i> (809)-000-0000</h3>
+            <h3><i class="fas fa-phone-alt" style="margin-right: 10px;"></i> (809)-952-0863</h3>
             <p>Estamos disponibles para atenderte en horario de oficina. No dudes en llamarnos para cualquier consulta.</p>
         </div>
 
         <div class="card">
-            <h3><i class="far fa-envelope" style="margin-right: 10px;"></i> niphera@gmail.com</h3>
+            <h3><i class="far fa-envelope" style="margin-right: 10px;"></i> info@niphera.com</h3>
             <p>Envíanos un correo con tus preguntas o proyectos. Te responderemos a la mayor brevedad posible.</p>
         </div>
 
@@ -357,7 +575,13 @@
         <div>
             <h3>NIPHERA</h3>
             <p>Desarrollando soluciones digitales innovadoras desde 2026</p>
-            <p>Polítécnico Vicente Aquilino Santos</p>
+        
+        </div>
+        <div>
+            <h3>Contactos</h3>
+            <p><i class="bi bi-instagram"></i> programming2526_</p>
+            <p><i class="bi bi-whatsapp"></i> 809-952-0863</p>
+            <p><i class="bi bi-envelope-at"></i> info@niphera.com</p>
         </div>
         <div>
             <h3>Legal</h3>
@@ -367,7 +591,409 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="js/animaciones.js"></script>
+    <!-- Importar Firebase (versión modular) -->
+    <script type="importmap">
+        {
+            "imports": {
+                "firebase/app": "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js",
+                "firebase/firestore": "https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js"
+            }
+        }
+    </script>
+    
+    <script type="module">
+        // Importar Firebase
+        import { initializeApp } from "firebase/app";
+        import { getFirestore, collection, addDoc, serverTimestamp, query, where, getDocs } from "firebase/firestore";
+        
+        // Tu configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyD1wjT3F1GeaWhZRk94Ri3Ppk6evWLI7X8",
+            authDomain: "niphera-a7276.firebaseapp.com",
+            projectId: "niphera-a7276",
+            storageBucket: "niphera-a7276.firebasestorage.app",
+            messagingSenderId: "243551456999",
+            appId: "1:243551456999:web:4a986cd9f4a19a4d2c5c42",
+            measurementId: "G-3VTLT7G48B"
+        };
+        
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        console.log("✅ Firebase conectado correctamente");
+        
+        // Función para mostrar mensajes flotantes con diseño Niphera
+        function mostrarMensaje(mensaje, tipo) {
+            // Crear contenedor del toast
+            const toast = document.createElement('div');
+            toast.className = `toast-message toast-${tipo}`;
+            
+            // Seleccionar ícono según el tipo
+            let icono = '';
+            let titulo = '';
+            
+            switch(tipo) {
+                case 'success':
+                    icono = '✓';
+                    titulo = 'Éxito';
+                    break;
+                case 'error':
+                    icono = '✕';
+                    titulo = 'Error';
+                    break;
+                case 'info':
+                    icono = 'ℹ';
+                    titulo = 'Información';
+                    break;
+                default:
+                    icono = '✓';
+                    titulo = 'Mensaje';
+            }
+            
+            // Estructura HTML del toast
+            toast.innerHTML = `
+                <div class="toast-content">
+                    <div class="toast-icon">${icono}</div>
+                    <div class="toast-text">
+                        <strong>${titulo}</strong>
+                        ${mensaje}
+                    </div>
+                    <div class="toast-close">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(toast);
+            
+            // Función para cerrar el toast
+            const closeToast = () => {
+                if (toast.classList.contains('toast-hide')) return;
+                toast.classList.add('toast-hide');
+                setTimeout(() => {
+                    if (toast && toast.parentNode) {
+                        toast.remove();
+                    }
+                }, 300);
+            };
+            
+            // Evento para cerrar al hacer clic en el botón
+            const closeBtn = toast.querySelector('.toast-close');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    closeToast();
+                });
+            }
+            
+            // Cerrar al hacer clic en el toast
+            toast.addEventListener('click', (e) => {
+                if (e.target === toast) {
+                    closeToast();
+                }
+            });
+            
+            // Auto-cerrar después de 4 segundos
+            setTimeout(() => {
+                closeToast();
+            }, 4000);
+        }
+        
+        // ========== VALIDACIONES ==========
+        function validarEmail(email) {
+            const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            return regex.test(email);
+        }
+        
+        function validarTelefono(telefono) {
+            const soloNumeros = telefono.replace(/\D/g, '');
+            const regexSoloNumeros = /^[0-9]+$/;
+            if (!regexSoloNumeros.test(soloNumeros)) {
+                return false;
+            }
+            if (soloNumeros.length < 10 || soloNumeros.length > 15) {
+                return false;
+            }
+            return true;
+        }
+        
+        function validarMensaje(mensaje) {
+            const longitud = mensaje.trim().length;
+            if (longitud < 10) {
+                return { valido: false, error: "El mensaje debe tener al menos 10 caracteres" };
+            }
+            if (longitud > 500) {
+                return { valido: false, error: "El mensaje no puede exceder los 500 caracteres" };
+            }
+            return { valido: true, error: null };
+        }
+        
+        function limpiarCampoTelefono() {
+            const telefonoInput = document.getElementById('telefono');
+            if (telefonoInput) {
+                telefonoInput.addEventListener('input', function(e) {
+                    this.value = this.value.replace(/\D/g, '');
+                    if (this.value.length > 15) {
+                        this.value = this.value.slice(0, 15);
+                    }
+                });
+            }
+        }
+        
+        // ========== FORMULARIO DE CONTACTO ==========
+        const btnEnviar = document.getElementById('btnEnviar');
+        const nombreInput = document.getElementById('nombre');
+        const telefonoInput = document.getElementById('telefono');
+        const emailInput = document.getElementById('email');
+        const mensajeInput = document.getElementById('mensaje');
+        
+        if (btnEnviar) {
+            limpiarCampoTelefono();
+            
+            // Contador de caracteres
+            function mostrarContadorCaracteres(longitud) {
+                let contador = document.getElementById('contador-caracteres');
+                if (!contador && mensajeInput) {
+                    contador = document.createElement('small');
+                    contador.id = 'contador-caracteres';
+                    contador.style.display = 'block';
+                    contador.style.textAlign = 'right';
+                    contador.style.marginTop = '-15px';
+                    contador.style.marginBottom = '15px';
+                    contador.style.fontSize = '12px';
+                    contador.style.fontFamily = 'Poppins, sans-serif';
+                    mensajeInput.parentNode.insertBefore(contador, mensajeInput.nextSibling);
+                }
+                if (contador) {
+                    contador.textContent = `${longitud}/500 caracteres`;
+                    if (longitud > 450) {
+                        contador.style.color = '#f59e0b';
+                    } else if (longitud > 480) {
+                        contador.style.color = '#ef4444';
+                    } else {
+                        contador.style.color = '#64748b';
+                    }
+                }
+            }
+            
+            if (mensajeInput) {
+                mostrarContadorCaracteres(0);
+                mensajeInput.addEventListener('input', function(e) {
+                    const longitud = this.value.length;
+                    if (longitud > 500) {
+                        this.value = this.value.slice(0, 500);
+                        mostrarMensaje('⚠️ El mensaje no puede exceder los 500 caracteres', 'error');
+                    }
+                    mostrarContadorCaracteres(longitud);
+                });
+            }
+            
+            async function enviarMensaje() {
+                const nombre = nombreInput ? nombreInput.value.trim() : '';
+                let telefono = telefonoInput ? telefonoInput.value.trim() : '';
+                const email = emailInput ? emailInput.value.trim().toLowerCase() : '';
+                const mensaje = mensajeInput ? mensajeInput.value.trim() : '';
+                
+                if (!nombre) {
+                    mostrarMensaje('❌ Por favor ingresa tu nombre', 'error');
+                    if (nombreInput) nombreInput.focus();
+                    return;
+                }
+                if (nombre.length < 2) {
+                    mostrarMensaje('❌ El nombre debe tener al menos 2 caracteres', 'error');
+                    if (nombreInput) nombreInput.focus();
+                    return;
+                }
+                
+                if (!telefono) {
+                    mostrarMensaje('❌ Por favor ingresa tu teléfono', 'error');
+                    if (telefonoInput) telefonoInput.focus();
+                    return;
+                }
+                if (!validarTelefono(telefono)) {
+                    mostrarMensaje('❌ Teléfono inválido. Solo números, mínimo 10 y máximo 15 dígitos', 'error');
+                    if (telefonoInput) telefonoInput.focus();
+                    return;
+                }
+                
+                if (!email) {
+                    mostrarMensaje('❌ Por favor ingresa tu correo electrónico', 'error');
+                    if (emailInput) emailInput.focus();
+                    return;
+                }
+                if (!validarEmail(email)) {
+                    mostrarMensaje('❌ Correo electrónico inválido. Ejemplo: nombre@dominio.com', 'error');
+                    if (emailInput) emailInput.focus();
+                    return;
+                }
+                
+                if (!mensaje) {
+                    mostrarMensaje('❌ Por favor escribe tu mensaje', 'error');
+                    if (mensajeInput) mensajeInput.focus();
+                    return;
+                }
+                const validacionMensaje = validarMensaje(mensaje);
+                if (!validacionMensaje.valido) {
+                    mostrarMensaje(`❌ ${validacionMensaje.error}`, 'error');
+                    if (mensajeInput) mensajeInput.focus();
+                    return;
+                }
+                
+                if (btnEnviar) {
+                    btnEnviar.disabled = true;
+                    btnEnviar.textContent = 'Enviando...';
+                }
+                
+                try {
+                    const docRef = await addDoc(collection(db, "contactos"), {
+                        nombre: nombre,
+                        telefono: telefono,
+                        email: email,
+                        mensaje: mensaje,
+                        fecha: serverTimestamp(),
+                        leido: false
+                    });
+                    console.log("✅ Mensaje guardado con ID:", docRef.id);
+                    mostrarMensaje('✅ ¡Mensaje enviado con éxito! Te contactaremos pronto.', 'success');
+                    
+                    if (nombreInput) nombreInput.value = '';
+                    if (telefonoInput) telefonoInput.value = '';
+                    if (emailInput) emailInput.value = '';
+                    if (mensajeInput) mensajeInput.value = '';
+                    mostrarContadorCaracteres(0);
+                } catch (error) {
+                    console.error("❌ Error al guardar:", error);
+                    mostrarMensaje('❌ Error al enviar. Por favor intenta de nuevo.', 'error');
+                } finally {
+                    if (btnEnviar) {
+                        btnEnviar.disabled = false;
+                        btnEnviar.textContent = 'Enviar mensaje';
+                    }
+                }
+            }
+            
+            btnEnviar.addEventListener('click', enviarMensaje);
+            
+            const inputs = [nombreInput, telefonoInput, emailInput, mensajeInput];
+            inputs.forEach(input => {
+                if (input) {
+                    input.addEventListener('keypress', (e) => {
+                        if (e.key === 'Enter' && !e.shiftKey) {
+                            e.preventDefault();
+                            enviarMensaje();
+                        }
+                    });
+                }
+            });
+        }
+        
+        // ========== NEWSLETTER CON VALIDACIÓN DE CORREO DUPLICADO ==========
+        const btnSuscribir = document.getElementById('btnSuscribir');
+        const newsEmailInput = document.getElementById('newsEmail');
+        
+        if (btnSuscribir && newsEmailInput) {
+            async function verificarEmailDuplicado(email) {
+                try {
+                    console.log("🔍 Verificando si el email existe:", email);
+                    const suscriptoresRef = collection(db, "suscriptores");
+                    const q = query(suscriptoresRef, where("email", "==", email));
+                    const querySnapshot = await getDocs(q);
+                    const existe = !querySnapshot.empty;
+                    console.log("📧 Email existe:", existe);
+                    return existe;
+                } catch (error) {
+                    console.error("❌ Error en la consulta de verificación:", error);
+                    if (error.code === 'failed-precondition' || error.message.includes('index')) {
+                        mostrarMensaje('⚠️ Error de configuración. Por favor contacta al administrador.', 'error');
+                        throw new Error('Se requiere crear un índice en Firebase Console');
+                    }
+                    throw error;
+                }
+            }
+            
+            async function suscribirNewsletter() {
+                const email = newsEmailInput.value.trim().toLowerCase();
+                
+                if (!email) {
+                    mostrarMensaje('❌ Por favor ingresa tu correo electrónico', 'error');
+                    newsEmailInput.focus();
+                    return;
+                }
+                
+                if (!validarEmail(email)) {
+                    mostrarMensaje('❌ Correo electrónico inválido. Ejemplo: nombre@dominio.com', 'error');
+                    newsEmailInput.focus();
+                    return;
+                }
+                
+                btnSuscribir.disabled = true;
+                btnSuscribir.textContent = 'Verificando...';
+                
+                try {
+                    const emailExiste = await verificarEmailDuplicado(email);
+                    
+                    if (emailExiste) {
+                        mostrarMensaje('❌ Este correo ya está suscrito al newsletter. ¡Gracias por tu interés!', 'error');
+                        newsEmailInput.value = '';
+                        btnSuscribir.disabled = false;
+                        btnSuscribir.textContent = 'Suscribirse';
+                        return;
+                    }
+                    
+                    btnSuscribir.textContent = 'Suscribiendo...';
+                    
+                    const docRef = await addDoc(collection(db, "suscriptores"), {
+                        email: email,
+                        fecha: serverTimestamp(),
+                        activo: true,
+                        fechaSuscripcion: new Date().toISOString()
+                    });
+                    
+                    console.log("✅ Suscriptor guardado con ID:", docRef.id);
+                    mostrarMensaje('✅ ¡Te has suscrito al newsletter! Recibirás nuestras novedades.', 'success');
+                    newsEmailInput.value = '';
+                    
+                } catch (error) {
+                    console.error("❌ Error detallado al suscribir:", error);
+                    if (error.code === 'permission-denied') {
+                        mostrarMensaje('❌ Error de permisos. Verifica las reglas de seguridad.', 'error');
+                    } else if (error.code === 'unavailable') {
+                        mostrarMensaje('❌ Servicio no disponible. Intenta más tarde.', 'error');
+                    } else if (error.message && error.message.includes('index')) {
+                        mostrarMensaje('⚠️ Error de configuración. Se necesita crear un índice en Firebase.', 'error');
+                    } else {
+                        mostrarMensaje('❌ Error al suscribirte. Por favor intenta de nuevo.', 'error');
+                    }
+                } finally {
+                    btnSuscribir.disabled = false;
+                    btnSuscribir.textContent = 'Suscribirse';
+                }
+            }
+            
+            btnSuscribir.addEventListener('click', suscribirNewsletter);
+            newsEmailInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    suscribirNewsletter();
+                }
+            });
+        }
+        
+        // ScrollReveal para animaciones
+        const scriptScrollReveal = document.createElement('script');
+        scriptScrollReveal.src = "https://unpkg.com/scrollreveal";
+        scriptScrollReveal.onload = () => {
+            if (typeof ScrollReveal !== 'undefined') {
+                ScrollReveal().reveal('.formulario, .newsletter, .card', {
+                    origin: 'bottom',
+                    distance: '50px',
+                    duration: 800,
+                    delay: 200,
+                    interval: 100
+                });
+            }
+        };
+        document.body.appendChild(scriptScrollReveal);
+    </script>
 </body>
 </html>
