@@ -14,10 +14,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Bree+Serif&family=Roboto+Slab:wght@100..900&family=Abril+Fatface&family=Inter:opsz@14..32&display=swap" rel="stylesheet">
     
     <style>
-        .proyecto-destacado {
-            position: relative;
-        }
-        
         .badge-primer-proyecto {
             position: absolute;
             top: -15px;
@@ -238,6 +234,12 @@
             .card img {
                 height: 180px;
             }
+            .badge-primer-proyecto,
+            .badge-nuevo-proyecto {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+                top: -10px;
+            }
         }
     </style>
 </head>
@@ -276,16 +278,39 @@
                 </div>
             </div>
             
-            <!-- Proyecto 2: Celestial (Nuevo proyecto) -->
+            <!-- Proyecto 2: Celestial (Sin insignia) -->
             <div class="card">
-                <div class="badge-nuevo-proyecto">
-                    ¡NUEVO PROYECTO!
-                </div>
                 <img src="Imagenes/celestial.png" alt="Celestial - Proyecto web">
                 <div class="contenido">
                     <h3>Celestial</h3>
                     <p>Diseño web moderno y elegante con temática celestial. Interfaz intuitiva y experiencia de usuario fluida.</p>
                     <a href="https://celestial-proyecte.netlify.app" target="_blank" rel="noopener noreferrer" class="btn">Visitar proyecto →</a>
+                </div>
+            </div>
+
+            <!-- Proyecto 3: Call of Productivity (NUEVO PROYECTO) -->
+            <div class="card">
+                <div class="badge-nuevo-proyecto">
+                    ¡NUEVO PROYECTO!
+                </div>
+                <img src="Imagenes/CallOfproductivity.png" alt="Call of Productivity - Gestión de tareas y productividad">
+                <div class="contenido">
+                    <h3>Call of Productivity</h3>
+                    <p>Aplicación web para gestionar tareas, objetivos y hábitos diarios. Interfaz gamificada que convierte la productividad en un desafío emocionante. Organiza tu tiempo, establece metas y alcanza nuevos niveles de eficiencia.</p>
+                    <a href="https://callofproductivity.netlify.app/profile" target="_blank" rel="noopener noreferrer" class="btn">Visitar proyecto →</a>
+                </div>
+            </div>
+
+            <!-- Proyecto 4: Mega FastFood (NUEVO PROYECTO) -->
+            <div class="card">
+                <div class="badge-nuevo-proyecto">
+                    ¡NUEVO PROYECTO!
+                </div>
+                <img src="Imagenes/Mega Food.png" alt="Mega FastFood - Restaurante de comida rápida">
+                <div class="contenido">
+                    <h3>Mega FastFood</h3>
+                    <p>Plataforma moderna para pedidos de comida rápida. Catálogo interactivo, carrito de compras, sistema de pedidos en línea y gestión de menús. Experiencia de usuario optimizada para dispositivos móviles y escritorio.</p>
+                    <a href="https://mega-fastfood.netlify.app" target="_blank" rel="noopener noreferrer" class="btn">Visitar proyecto →</a>
                 </div>
             </div>
             
@@ -317,5 +342,18 @@
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="js/animaciones.js"></script>
+    
+    <script>
+        if (typeof ScrollReveal !== 'undefined') {
+            ScrollReveal().reveal('.card', {
+                origin: 'bottom',
+                distance: '50px',
+                duration: 800,
+                delay: 200,
+                interval: 150,
+                reset: false
+            });
+        }
+    </script>
 </body>
 </html>
